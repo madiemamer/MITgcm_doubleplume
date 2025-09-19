@@ -25,7 +25,7 @@ C allow LeithQG coefficient to be calculated
 #undef ALLOW_LEITH_QG
 
 C allow isotropic 3-D Smagorinsky viscosity
-#undef ALLOW_SMAG_3D
+#define ALLOW_SMAG_3D
 
 C allow full 3D specification of horizontal Laplacian Viscosity
 #undef ALLOW_3D_VISCAH

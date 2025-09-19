@@ -1,0 +1,69 @@
+====== Welcome to the Plume building script =====
+First Try of Cowton's Model with a 'fjord-like' domain.
+	Making experiment to compare plume realizations
+run_config is {'ncpus_xy': [1, 1], 'run_name': 'plume_base', 'ndays': 1, 'test': False, 'horiz_res_m': 500, 'Lx_m': 60000, 'Ly_m': 6000, 'use_GMRedi': False, 'periodic_forcing': False, 'use_MPI': False, 'lf': '\r\n', 'exps_dir': '/Users/mmamer3/Documents/MITgcm/experiments', 'run_dir': '/Users/mmamer3/Documents/MITgcm/experiments/plume_base'}
+run directory and subdirectories:
+/Users/mmamer3/Documents/MITgcm/experiments/plume_base
+['input', 'code', 'results', 'build']
+====== Domain Size and Parameters =====
+Nx: 120.0
+Ny: 12.0
+sNx: 120.0
+sNy: 12.0
+Grid parameters
+{'Nr': 50, 'nSx': 1, 'nSy': 1, 'nTx': 1, 'nTy': 1, 'OLx': 3, 'OLy': 3, 'nPx': 1, 'nPy': 1, 'Nx': 120, 'Ny': 12, 'sNx': 120, 'sNy': 12}
+dz: 
+ [ 2.5         2.80612245  3.1122449   3.41836735  3.7244898   4.03061224
+  4.33673469  4.64285714  4.94897959  5.25510204  5.56122449  5.86734694
+  6.17346939  6.47959184  6.78571429  7.09183673  7.39795918  7.70408163
+  8.01020408  8.31632653  8.62244898  8.92857143  9.23469388  9.54081633
+  9.84693878 10.15306122 10.45918367 10.76530612 11.07142857 11.37755102
+ 11.68367347 11.98979592 12.29591837 12.60204082 12.90816327 13.21428571
+ 13.52040816 13.82653061 14.13265306 14.43877551 14.74489796 15.05102041
+ 15.35714286 15.66326531 15.96938776 16.2755102  16.58163265 16.8877551
+ 17.19387755 17.5       ]
+z: 
+ [  2.5          5.30612245   8.41836735  11.83673469  15.56122449
+  19.59183673  23.92857143  28.57142857  33.52040816  38.7755102
+  44.33673469  50.20408163  56.37755102  62.85714286  69.64285714
+  76.73469388  84.13265306  91.83673469  99.84693878 108.16326531
+ 116.78571429 125.71428571 134.94897959 144.48979592 154.33673469
+ 164.48979592 174.94897959 185.71428571 196.78571429 208.16326531
+ 219.84693878 231.83673469 244.13265306 256.73469388 269.64285714
+ 282.85714286 296.37755102 310.20408163 324.33673469 338.7755102
+ 353.52040816 368.57142857 383.92857143 399.59183673 415.56122449
+ 431.83673469 448.41836735 465.30612245 482.5        500.        ]
+delx.bin (120,)
+dely.bin (12,)
+delz.bin (50,)
+====== Stability Check =====
+S_adv: <0.5 , S_in: <0.5 , S_lv: <0.6
+S_adv: 0.2000, S_in: 0.0137, S_lv: 0.0064
+Diagnostic Settings
+{'diag_mnc': False, 'fields(1:5,1)': "THETA','SALT','UVEL','WVEL','VVEL", 'fileName(1)': 'dynDiag', 'frequency(1)': 43200, 'timePhase(1)': 0.0, 'fields(1:4,2)': "UVELSLT ','UVELTH  ','WVELSLT ','WVELTH  ", 'fileName(2)': 'fluxDiag', 'frequency(2)': 43200, 'timePhase(2)': 0.0, 'fields(1:6,3)': "UTHMASS ','USLTMASS','VTHMASS ','VSLTMASS','WTHMASS ','WSLTMASS", 'fileName(3)': 'fluxMassDiag', 'frequency(3)': 43200, 'timePhase(3)': 0.0, 'fields(1:5,4)': "icefrntW','icefrntT','icefrntS','icefrntR','icefrntM", 'fileName(4)': 'plumeDiag', 'frequency(4)': 43200, 'timePhase(4)': 0.0, 'fields(1:4,5)': "SHIfwFlx','SHIhtFlx','SHI_TauX','SHI_TauY", 'fileName(5)': 'shelfDiag', 'frequency(5)': 43200, 'timePhase(5)': 0.0, 'fields(1:5,6)': "THETA','SALT','UVEL','WVEL','VVEL", 'fileName(6)': 'dynDiag_inst', 'frequency(6)': -43200, 'timePhase(6)': 0.0}
+====== Boundary Conditions =====
+====== Domain Initialization =====
+fjord end: 110
+bathymetry.bin (12, 120)
+T.init (50, 12, 120)
+S.init (50, 12, 120)
+EBCs.bin (50, 12)
+EBCt.bin (50, 12)
+EBCs.bin (50, 12)
+EBCt.bin (50, 12)
+EBCv.bin (50, 12)
+NsBCs.bin (50, 120)
+NsBCt.bin (50, 120)
+NsBCv.bin (50, 120)
+NsBCW.bin (50, 120)
+Plume Location: 6 discharge: 500.000000
+runoffVel.bin (12, 120, 1)
+runoffRad.bin (12, 120, 1)
+plumeMask.bin (12, 120)
+EBCu.bin (50, 12)
+====== Cleaning up input/ files =====
+====== sbatch script and settings =====
+===== Wall Clock Time =====
+Estimated run time is 0.21 hours for one CPU
+Estimated run time is 0.25 hours for 1 CPUs
+

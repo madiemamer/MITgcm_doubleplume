@@ -1,0 +1,6 @@
+# Packages
+ &PACKAGES
+ useOBCS=.TRUE.,
+ useDiagnostics=.FALSE.,
+ useICEPLUME=.TRUE.,
+ &
