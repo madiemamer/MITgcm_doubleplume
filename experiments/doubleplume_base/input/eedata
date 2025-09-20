@@ -5,7 +5,8 @@
  &EEPARMS
  nTx=1,
  nTy=1,
- printMapIncludesZeros = .TRUE.
+ printMapIncludesZeros = .TRUE.,
+ debugMode = .TRUE.
  &
 # Note: Some systems use & as the
 # namelist terminator. Other systems

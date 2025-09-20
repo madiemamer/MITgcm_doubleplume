@@ -3435,12 +3435,12 @@ C Header file pkg/DOUBLEPLUME
      &     runoffRad, runoffRad0, runoffRad1,
      &     plumeMask, 
      &     HeatFlux3D, FwFlux3D,
-     &     rProfPlume3D, wProfPlume3D,
-     &     tProfPlume3D, sProfPlume3D,
-     &     mProfPlume3D, mProfAv3D,
-     &     rProfPlume3DLocal, wProfPlume3DLocal,
-     &     tProfPlume3DLocal, sProfPlume3DLocal,
-     &     mProfPlume3DLocal, mProfAv3DLocal,
+     &     QiProf3D, MiProf3D,
+     &     HiProf3D, BiProf3D,
+     &     mProf3D, mProfAv3D,
+     &     QiProf3DLocal, MiProf3DLocal,
+     &     HiProf3DLocal, BiProf3DLocal,
+     &     mProf3DLocal, mProfAv3DLocal,
      &     temp_addMass3D, salt_addMass3D,
      &     volFluxDiff3D,
      &     Qin
@@ -3453,42 +3453,42 @@ C Header file pkg/DOUBLEPLUME
       Real*8 plumeMask  (1-Olx:sNx+Olx,1-Oly:sNy+Oly,nSx,nSy)
       Real*8 HeatFlux3D  (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       Real*8 FwFlux3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 rProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 wProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 tProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 sProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 mProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 QiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 MiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 HiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 BiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 mProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       Real*8 mProfAv3D       (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       Real*8 temp_addMass3D  (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       Real*8 salt_addMass3D  (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       Real*8 volFluxDiff3D   (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 rProfPlume3DLocal    (sNx,sNy,Nr)
-      Real*8 wProfPlume3DLocal    (sNx,sNy,Nr)
-      Real*8 tProfPlume3DLocal    (sNx,sNy,Nr)
-      Real*8 sProfPlume3DLocal    (sNx,sNy,Nr)
-      Real*8 mProfPlume3DLocal    (sNx,sNy,Nr)
+      Real*8 QiProf3DLocal    (sNx,sNy,Nr)
+      Real*8 MiProf3DLocal    (sNx,sNy,Nr)
+      Real*8 HiProf3DLocal    (sNx,sNy,Nr)
+      Real*8 BiProf3DLocal    (sNx,sNy,Nr)
+      Real*8 mProf3DLocal    (sNx,sNy,Nr)
       Real*8 mProfAv3DLocal       (sNx,sNy,Nr)
       Real*8 Qin (100)
 
       COMMON /DOUBLEPLUME_FIELDS_PROFILES/
-     &     sProf, tProf, ptProf, prProf, uProf, vProf,
-     &     rProfPlume, wProfPlume, tProfPlume, sProfPlume,
+     &     saProf, taProf, ptProf, prProf, uProf, vProf,
+     &     QiProf, MiProf, HiProf, BiProf,
      &     uProfPlume, mProfPlume, mProfAv, mProf, zProf, zProfAbs,
      &     volFLux, volFluxDiff,
      &     FwFlux, HeatFlux,
-     &     delta_z, aProfPlume, mIntProfPlume
-      Real*8 sProf  (Nr)
-      Real*8 tProf  (Nr)
+     &     delta_z, aProf, mIntProf
+      Real*8 saProf  (Nr)
+      Real*8 taProf  (Nr)
       Real*8 ptProf (Nr)
       Real*8 prProf (Nr)
       Real*8 uProf  (Nr)
       Real*8 vProf  (Nr)
-      Real*8 rProfPlume (Nr+1)
-      Real*8 wProfPlume (Nr+1)
-      Real*8 tProfPlume (Nr+1)
-      Real*8 sProfPlume (Nr+1)
-      Real*8 aProfPlume (Nr+1)   ! integrated area of plume from bottom
-      Real*8 mIntProfPlume (Nr+1)   ! integrated melt of plume from bottom
+      Real*8 QiProf (Nr+1)
+      Real*8 MiProf (Nr+1)
+      Real*8 HiProf (Nr+1)
+      Real*8 BiProf (Nr+1)
+      Real*8 aProf (Nr+1)   ! integrated area of plume from bottom
+      Real*8 mIntProf (Nr+1)   ! integrated melt of plume from bottom
       Real*8 uProfPlume (Nr)     
       Real*8 mProfPlume (Nr)
       Real*8 mProfAv    (Nr)
@@ -3613,26 +3613,21 @@ C     !INPUT/OUTPUT PARAMETERS:
 C     ==Local variables==
 
 C     Plume models
-      EXTERNAL JENKINS, HALFCONE, DETACHED_CONE, JEX
+      EXTERNAL DOUBLEPLUME_INNER, JENKINS, HALFCONE, DETACHED_CONE, JEX
 
 C     For ODEPACK
       INTEGER  IOPT, IOUT, ISTATE, ITASK, ITOL, IWORK(20), LIW, LRW,
      &         MF, NEQ
       Real*8 T, TOUT
 
-
-      Real*8  RWORK(116), Y(7)
+      Real*8  RWORK(116), Y(4)
 
 
 C     Y is input/output vector for DLSODE
-C       Y(1) = plume thickness/radius
-C       Y(2) = plume velocity
-C       Y(3) = plume temperature
-C       Y(4) = plume salinity
-C       Y(5) = plume area
-C       Y(6) = area integrated melt
-C       Y(7) = angle of plume (detatched plume only)
-C       Y(8) = distance of plume from ice (detatched plume only)
+C       Y(1) = plume volume flux
+C       Y(2) = plume momentum flux
+C       Y(3) = plume heat flux
+C       Y(4) = plume salt flux
  
 
 C     Other local variables
@@ -3646,11 +3641,9 @@ C     Other local variables
 
 
 C For ODEPACK solver. See ODEPACK documentation for definitions.
-
-      NEQ = 6
+      NEQ = 4
       LRW = 116
       LIW = 116
-
       ITOL = 1
       ITASK = 1
       ISTATE = 1
@@ -3659,85 +3652,60 @@ C For ODEPACK solver. See ODEPACK documentation for definitions.
       IWORK(7) = 2 ! To limit number of times repeat error messages are printed
 
 C Initial conditions
-      Y(2) = 1.D0          ! initial vertical velocity
+      Y(1) = 20.D0
+      Y(2) = 10.D0          ! initial vertical velocity
       Y(3) = 0.D0          ! initial temperature
-      Y(4) = 0.001          ! initial salinity
-      Y(5) = 0.0           ! integrated contact area
-      Y(6) = 0.0           ! integrated melt rate
-
-      Y(1) = 5.D0        ! intial plume thickness
-      Y(7) = delta_y
-
-
+      Y(4) = 0.D0          ! initial salinity
 
 C Prepare profiles
-
       DO K = 1,Nr+1
-       zProf(k) = rF(k)
-       zProfAbs(k) = abs(rF(k))
-       rProfPlume(k) = 0.0
-       wProfPlume(k) = 0.0
-       tProfPlume(k) = 0.0
-       sProfPlume(k) = 0.0
-       aProfPlume(k) = 0.0
-       mIntProfPlume(k) = 0.0
-
+        zProf(k) = rF(k)
+        zProfAbs(k) = abs(rF(k))
+        QiProf(k) = 0.D0
+        MiProf(k) = 0.D0
+        HiProf(k) = 0.D0
+        BiProf(k) = 0.D0
+C        aProf(k) = 0.D0
+C        mIntProf(k) = 0.D0
       ENDDO
 
 C Start at bottom of ice face
-       T = iceDepth
+      T = iceDepth
 
 C Next point at which to retrieve values
-       TOUT = zProf(iceDepthK-1)
+      TOUT = zProf(iceDepthK-1)
 
 C Clear cells below depth of ice face
       DO k = Nr+1,iceDepthK+1
-       rProfPlume(k) = 0.D0
-       wProfPlume(k) = 0.D0
-       tProfPlume(k) = 0.D0
-       sProfPlume(k) = 0.D0
-       aProfPlume(k)  = 0.D0
-       mIntProfPlume(k) = 0.D0
-
+        QiProf(k) = 0.D0
+        MiProf(k) = 0.D0
+        HiProf(k) = 0.D0
+        BiProf(k) = 0.D0
+C        aProf(k)  = 0.D0
+C        mIntProf(k) = 0.D0
       ENDDO
    
 C Set intial conditions
-      rProfPlume(iceDepthK) = Y(1)
-      wProfPlume(iceDepthK) = Y(2)
-      tProfPlume(iceDepthK) = Y(3)
-      sProfPlume(iceDepthK) = Y(4)
-      aProfPlume(iceDepthK) = Y(5)
-      mIntProfPlume(iceDepthK) = Y(6)
+      QiProf(iceDepthK) = Y(1)
+      MiProf(iceDepthK) = Y(2)
+      HiProf(iceDepthK) = Y(3)
+      BiProf(iceDepthK) = Y(4)
 
-
-      print *, "In plume model."
+C      print *, "In plume model."
+C      print *, "Initial conditions = ", Y(1), Y(2), Y(3), Y(4)
 
 C Move up through water column from lowest layer
 
       DO IOUT = iceDepthK-1,1,-1
       
 C Check to make sure plume hasn't reached neutral buoyancy in a lower layer
-       IF ( ISTATE .GT. -1 ) THEN 
-
-C Decide which plume model to use
-
-        Y(7) = delta_y
+        IF ( ISTATE .GT. -1 ) THEN 
 
 
-        IF ( useSheetPlume ) THEN
+            CALL DLSODE (DOUBLEPLUME_INNER,NEQ,Y,T,TOUT,ITOL,RTOL,ATOL,
+     &               ITASK,ISTATE, IOPT, RWORK, LRW, IWORK, LIW, 
+     &               JEX, MF)
 
-         CALL DLSODE (JENKINS,NEQ,Y,T,TOUT,ITOL,RTOL,ATOL,ITASK,
-     &               ISTATE, IOPT, RWORK, LRW, IWORK, LIW, JEX, MF)
-
-        ELSEIF ( useConePlume ) THEN
-        print *, "Calling DLSODE solver."
-
-         CALL DLSODE (HALFCONE,NEQ,Y,T,TOUT,ITOL,RTOL,ATOL,ITASK,
-     &               ISTATE, IOPT, RWORK, LRW, IWORK, LIW, JEX, MF)
-
-
-
-        ENDIF
 
 C Test to see if neutral buoyancy has now been reached.
 C If solver returns ISTATE = -1, then it has been unable to meet required tolerances
@@ -3748,85 +3716,3332 @@ C Our aim is to catch the plume at the point of neutral buoyancy. We therefore p
 C a manual comparrison of ambient and plume density. If plume density >= ambient density
 C we assign ISTATE = -1, again ending the call to the plume model.
 
-        temperature = Y(3)
-        salinity = Y(4)
-        depth = T
+          temperature = Y(3) / Y(1) ! Hi / Qi
+          salinity = Y(4) / Y(1) ! Bi / Qi
+          depth = T
 
 C Calculate plume density
-        rho_plume = RHO(temperature,salinity,depth)
+          rho_plume = RHO(temperature,salinity,depth)
+C          print *, "rho_plume =", rho_plume
 
-        IF (IOUT.EQ.1) THEN
-         tambient = tprof(1)
-         sambient = sprof(1)
-        ELSE
-         tambient = .5*(tprof(IOUT-1)+tprof(IOUT))
-         sambient = .5*(sprof(IOUT-1)+sprof(IOUT))
-        ENDIF
+          IF (IOUT.EQ.1) THEN
+            tambient = taprof(1)
+            sambient = saprof(1)
+          ELSE
+            tambient = .5*(taprof(IOUT-1)+taprof(IOUT))
+            sambient = .5*(saprof(IOUT-1)+saprof(IOUT))
+          ENDIF ! (IOUT.EQ.1)
 
 C Calculate ambient density
-        rho_ambient = RHO(tambient,sambient,depth)
+          rho_ambient = RHO(2.D0,34.D0,depth)
+C          print *, "rho_ambient = ", rho_ambient
 
-        IF ( rho_plume .GT. rho_ambient ) ISTATE = -1
+          IF ( rho_plume .GT. rho_ambient ) ISTATE = -1
 
 C If ISTATE is now < 0, then plume has reached neutral buoyancy 
-        IF ( ISTATE .LT. 0 ) THEN
+          IF ( ISTATE .LT. 0 ) THEN
 
 C If we have reached neutral buoyancy then there is no volume flux out of this cell,
 C so plume area and velocity equal zero.
 C Other values are kept for use in determining plume outflow properties.
 
-         Y(1) = 0.D0
-         Y(2) = 0.D0
+            Y(1) = 0.D0
+            Y(2) = 0.D0
 
-        ELSE
+          ELSE ! ( ISTATE .LT. 0 )
 
 C If the plume has not reached neutral buoyancy, then we assign a depth at which to calculate the next value and loop round to call the plume model again.
 C Make sure we're not at the surface
 
-         IF ( iout .NE. 1 ) THEN
+            IF ( iout .NE. 1 ) THEN
 
-C Define present depth
+              T=TOUT                ! Define present depth
+              TOUT = zProf(IOUT-1)  ! Define next depth
 
-          T=TOUT
-
-C Define next depth
-
-          TOUT = zProf(IOUT-1)
-
-         ENDIF
-        ENDIF
+            ENDIF ! ( iout .NE. 1 )
+          ENDIF ! ( ISTATE .LT. 0 )
+          
 
 C This section is entered once the plume has reached neutral buoyancy
-       ELSE
+        ELSE ! ( ISTATE .GT. -1 )
 
 C Once plume has reached neutral buoyancy, no plume values
-        Y(1) = 0.0
-        Y(2) = 0.0
-        Y(3) = 0.0
-        Y(4) = 0.0
-        Y(5) = 0.0
-        Y(6) = 0.0
+          Y(1) = 0.0
+          Y(2) = 0.0
+          Y(3) = 0.0
+          Y(4) = 0.0
 
-
-       ENDIF
+        ENDIF ! ( ISTATE .GT. -1 )
 
 C Save results
-       
-       rProfPlume(iout) = Y(1)
-       wProfPlume(iout) = Y(2)
-       tProfPlume(iout) = Y(3)
-       sProfPlume(iout) = Y(4)
-       aProfPlume(iout) = Y(5)
-       mIntProfPlume(iout) = Y(6)
+C       print *, "Y(2)/Y(1) = ", Y(2) / Y(1)
+C       print *, "Y(4)/Y(1) = ", Y(4) / Y(1)
+        QiProf(iout) = Y(1)
+        MiProf(iout) = Y(2)
+        HiProf(iout) = Y(3)
+        BiProf(iout) = Y(4)
+C        aProf(iout) = Y(5)
+C        mIntProf(iout) = Y(6)
 
-
-      ENDDO
+      ENDDO ! IOUT = iceDepthK-1,1,-1
+C      print *, "Succesful inner plume run."
+C      print *, "Qi = ", QiProf
 
 
 
       RETURN
       END
 
+C---------------------------------------------------------
+
+      SUBROUTINE DOUBLEPLUME_INNER (NEQ, T, Y, YDOT)
+      
+      implicit none
+
+
+
+C     *==========================================================*
+C     | DOUBLEPLUME_OPTIONS.h
+C     | o CPP options file for ICEFRONT package.
+C     *==========================================================*
+C     | Use this file for selecting options within the ICEFRONT
+C     | package.
+C     *==========================================================*
+
+
+C $Header: /u/gcmpack/MITgcm_contrib/icefront/2D_example/code/SIZE.h,v 1.1 2012/03/19 23:43:54 yunx Exp $
+C $Name:  $
+
+C
+CBOP
+C    !ROUTINE: SIZE.h
+C    !INTERFACE:
+C    include SIZE.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | SIZE.h Declare size of underlying computational grid.     
+C     *==========================================================*
+C     | The design here support a three-dimensional model grid    
+C     | with indices I,J and K. The three-dimensional domain      
+C     | is comprised of nPx*nSx blocks of size sNx along one axis 
+C     | nPy*nSy blocks of size sNy along another axis and one     
+C     | block of size Nz along the final axis.                    
+C     | Blocks have overlap regions of size OLx and OLy along the 
+C     | dimensions that are subdivided.                           
+C     *==========================================================*
+C     \ev
+CEOP
+C     Voodoo numbers controlling data layout.
+C     sNx :: No. X points in sub-grid.
+C     sNy :: No. Y points in sub-grid.
+C     OLx :: Overlap extent in X.
+C     OLy :: Overlat extent in Y.
+C     nSx :: No. sub-grids in X.
+C     nSy :: No. sub-grids in Y.
+C     nPx :: No. of processes to use in X.
+C     nPy :: No. of processes to use in Y.
+C     Nx  :: No. points in X for the total domain.
+C     Ny  :: No. points in Y for the total domain.
+C     Nr  :: No. points in Z for full process domain.
+      INTEGER sNx
+      INTEGER sNy
+      INTEGER OLx
+      INTEGER OLy
+      INTEGER nSx
+      INTEGER nSy
+      INTEGER nPx
+      INTEGER nPy
+      INTEGER Nx
+      INTEGER Ny
+      INTEGER Nr
+      PARAMETER (
+     &           sNx =   50,
+     &           sNy =   11,
+     &           OLx =   3,
+     &           OLy =   3,
+     &           nSx =   1,
+     &           nSy =   1,
+     &           nPx =   1,
+     &           nPy =   1,
+     &           Nx  = sNx*nSx*nPx,
+     &           Ny  = sNy*nSy*nPy,
+     &           Nr  =   50)
+
+C     MAX_OLX :: Set to the maximum overlap region size of any array
+C     MAX_OLY    that will be exchanged. Controls the sizing of exch
+C                routine buffers.
+      INTEGER MAX_OLX
+      INTEGER MAX_OLY
+      PARAMETER ( MAX_OLX = OLx,
+     &            MAX_OLY = OLy )
+
+
+CBOP
+C     !ROUTINE: EEPARAMS.h
+C     !INTERFACE:
+C     include "EEPARAMS.h"
+C
+C     !DESCRIPTION:
+C     *==========================================================*
+C     | EEPARAMS.h                                               |
+C     *==========================================================*
+C     | Parameters for "execution environemnt". These are used   |
+C     | by both the particular numerical model and the execution |
+C     | environment support routines.                            |
+C     *==========================================================*
+CEOP
+
+C     ========  EESIZE.h  ========================================
+
+C     MAX_LEN_MBUF  :: Default message buffer max. size
+C     MAX_LEN_FNAM  :: Default file name max. size
+C     MAX_LEN_PREC  :: Default rec len for reading "parameter" files
+
+      INTEGER MAX_LEN_MBUF
+      PARAMETER ( MAX_LEN_MBUF = 512 )
+      INTEGER MAX_LEN_FNAM
+      PARAMETER ( MAX_LEN_FNAM = 512 )
+      INTEGER MAX_LEN_PREC
+      PARAMETER ( MAX_LEN_PREC = 200 )
+
+C     MAX_NO_THREADS  :: Maximum number of threads allowed.
+C     GSVec_size      :: Maximum buffer size for Global Sum Vector array
+      INTEGER MAX_NO_THREADS
+      PARAMETER ( MAX_NO_THREADS =  4 )
+      INTEGER GSVec_size
+      PARAMETER ( GSVec_size = 1024 )
+
+C     Particularly weird and obscure voodoo numbers
+C     lShare :: This wants to be the length in
+C               [148]-byte words of the size of
+C               the address "window" that is snooped
+C               on an SMP bus. By separating elements in
+C               the global sum buffer we can avoid generating
+C               extraneous invalidate traffic between
+C               processors. The length of this window is usually
+C               a cache line i.e. small O(64 bytes).
+C               The buffer arrays are usually short arrays
+C               and are declared REAL ARRA(lShare[148],LBUFF).
+C               Setting lShare[148] to 1 is like making these arrays
+C               one dimensional.
+      INTEGER cacheLineSize
+      INTEGER lShare1
+      INTEGER lShare4
+      INTEGER lShare8
+      PARAMETER ( cacheLineSize = 256 )
+      PARAMETER ( lShare1 =  cacheLineSize )
+      PARAMETER ( lShare4 =  cacheLineSize/4 )
+      PARAMETER ( lShare8 =  cacheLineSize/8 )
+
+C     ========  EESIZE.h  ========================================
+
+C     Symbolic values
+C     precXXXX :: precision used for I/O
+      INTEGER precFloat32
+      PARAMETER ( precFloat32 = 32 )
+      INTEGER precFloat64
+      PARAMETER ( precFloat64 = 64 )
+
+C     Real-type constant for some frequently used simple number (0,1,2,1/2):
+      Real*8     zeroRS, oneRS, twoRS, halfRS
+      PARAMETER ( zeroRS = 0.0D0 , oneRS  = 1.0D0 )
+      PARAMETER ( twoRS  = 2.0D0 , halfRS = 0.5D0 )
+      Real*8     zeroRL, oneRL, twoRL, halfRL
+      PARAMETER ( zeroRL = 0.0D0 , oneRL  = 1.0D0 )
+      PARAMETER ( twoRL  = 2.0D0 , halfRL = 0.5D0 )
+
+C     UNSET_xxx :: Used to indicate variables that have not been given a value
+      Real*8  UNSET_FLOAT8
+      PARAMETER ( UNSET_FLOAT8 = 1.234567D5 )
+      Real*4  UNSET_FLOAT4
+      PARAMETER ( UNSET_FLOAT4 = 1.234567E5 )
+      Real*8     UNSET_RL
+      PARAMETER ( UNSET_RL     = 1.234567D5 )
+      Real*8     UNSET_RS
+      PARAMETER ( UNSET_RS     = 1.234567D5 )
+      INTEGER UNSET_I
+      PARAMETER ( UNSET_I      = 123456789  )
+
+C     debLevX  :: used to decide when to print debug messages
+      INTEGER debLevZero
+      INTEGER debLevA, debLevB,  debLevC, debLevD, debLevE
+      PARAMETER ( debLevZero=0 )
+      PARAMETER ( debLevA=1 )
+      PARAMETER ( debLevB=2 )
+      PARAMETER ( debLevC=3 )
+      PARAMETER ( debLevD=4 )
+      PARAMETER ( debLevE=5 )
+
+C     SQUEEZE_RIGHT      :: Flag indicating right blank space removal
+C                           from text field.
+C     SQUEEZE_LEFT       :: Flag indicating left blank space removal
+C                           from text field.
+C     SQUEEZE_BOTH       :: Flag indicating left and right blank
+C                           space removal from text field.
+C     PRINT_MAP_XY       :: Flag indicating to plot map as XY slices
+C     PRINT_MAP_XZ       :: Flag indicating to plot map as XZ slices
+C     PRINT_MAP_YZ       :: Flag indicating to plot map as YZ slices
+C     commentCharacter   :: Variable used in column 1 of parameter
+C                           files to indicate comments.
+C     INDEX_I            :: Variable used to select an index label
+C     INDEX_J               for formatted input parameters.
+C     INDEX_K
+C     INDEX_NONE
+      CHARACTER*(*) SQUEEZE_RIGHT
+      PARAMETER ( SQUEEZE_RIGHT = 'R' )
+      CHARACTER*(*) SQUEEZE_LEFT
+      PARAMETER ( SQUEEZE_LEFT = 'L' )
+      CHARACTER*(*) SQUEEZE_BOTH
+      PARAMETER ( SQUEEZE_BOTH = 'B' )
+      CHARACTER*(*) PRINT_MAP_XY
+      PARAMETER ( PRINT_MAP_XY = 'XY' )
+      CHARACTER*(*) PRINT_MAP_XZ
+      PARAMETER ( PRINT_MAP_XZ = 'XZ' )
+      CHARACTER*(*) PRINT_MAP_YZ
+      PARAMETER ( PRINT_MAP_YZ = 'YZ' )
+      CHARACTER*(*) commentCharacter
+      PARAMETER ( commentCharacter = '#' )
+      INTEGER INDEX_I
+      INTEGER INDEX_J
+      INTEGER INDEX_K
+      INTEGER INDEX_NONE
+      PARAMETER ( INDEX_I    = 1,
+     &            INDEX_J    = 2,
+     &            INDEX_K    = 3,
+     &            INDEX_NONE = 4 )
+
+C     EXCH_IGNORE_CORNERS :: Flag to select ignoring or
+C     EXCH_UPDATE_CORNERS    updating of corners during an edge exchange.
+      INTEGER EXCH_IGNORE_CORNERS
+      INTEGER EXCH_UPDATE_CORNERS
+      PARAMETER ( EXCH_IGNORE_CORNERS = 0,
+     &            EXCH_UPDATE_CORNERS = 1 )
+
+C     FORWARD_SIMULATION
+C     REVERSE_SIMULATION
+C     TANGENT_SIMULATION
+      INTEGER FORWARD_SIMULATION
+      INTEGER REVERSE_SIMULATION
+      INTEGER TANGENT_SIMULATION
+      PARAMETER ( FORWARD_SIMULATION = 0,
+     &            REVERSE_SIMULATION = 1,
+     &            TANGENT_SIMULATION = 2 )
+
+C--   COMMON /EEPARAMS_L/ Execution environment public logical variables.
+C     eeBootError    :: Flags indicating error during multi-processing
+C     eeEndError     :: initialisation and termination.
+C     fatalError     :: Flag used to indicate that the model is ended with an error
+C     debugMode      :: controls printing of debug msg (sequence of S/R calls).
+C     useSingleCpuIO :: When useSingleCpuIO is set, MDS_WRITE_FIELD outputs from
+C                       master MPI process only. -- NOTE: read from main parameter
+C                       file "data" and not set until call to INI_PARMS.
+C     useSingleCpuInput :: When useSingleCpuInput is set, EXF_INTERP_READ
+C                       reads forcing files from master MPI process only.
+C                       -- NOTE: read from main parameter file "data"
+C                          and defaults to useSingleCpuInput = useSingleCpuIO
+C     printMapIncludesZeros  :: Flag that controls whether character constant
+C                               map code ignores exact zero values.
+C     useCubedSphereExchange :: use Cubed-Sphere topology domain.
+C     useCoupler     :: use Coupler for a multi-components set-up.
+C     useNEST_PARENT :: use Parent Nesting interface (pkg/nest_parent)
+C     useNEST_CHILD  :: use Child  Nesting interface (pkg/nest_child)
+C     useNest2W_parent :: use Parent 2-W Nesting interface (pkg/nest2w_parent)
+C     useNest2W_child  :: use Child  2-W Nesting interface (pkg/nest2w_child)
+C     useOASIS       :: use OASIS-coupler for a multi-components set-up.
+      COMMON /EEPARAMS_L/
+c    &  eeBootError, fatalError, eeEndError,
+     &  eeBootError, eeEndError, fatalError, debugMode,
+     &  useSingleCpuIO, useSingleCpuInput, printMapIncludesZeros,
+     &  useCubedSphereExchange, useCoupler,
+     &  useNEST_PARENT, useNEST_CHILD,
+     &  useNest2W_parent, useNest2W_child, useOASIS,
+     &  useSETRLSTK, useSIGREG
+      LOGICAL eeBootError
+      LOGICAL eeEndError
+      LOGICAL fatalError
+      LOGICAL debugMode
+      LOGICAL useSingleCpuIO
+      LOGICAL useSingleCpuInput
+      LOGICAL printMapIncludesZeros
+      LOGICAL useCubedSphereExchange
+      LOGICAL useCoupler
+      LOGICAL useNEST_PARENT
+      LOGICAL useNEST_CHILD
+      LOGICAL useNest2W_parent
+      LOGICAL useNest2W_child
+      LOGICAL useOASIS
+      LOGICAL useSETRLSTK
+      LOGICAL useSIGREG
+
+C--   COMMON /EPARAMS_I/ Execution environment public integer variables.
+C     errorMessageUnit    :: Fortran IO unit for error messages
+C     standardMessageUnit :: Fortran IO unit for informational messages
+C     maxLengthPrt1D :: maximum length for printing (to Std-Msg-Unit) 1-D array
+C     scrUnit1      :: Scratch file 1 unit number
+C     scrUnit2      :: Scratch file 2 unit number
+C     eeDataUnit    :: Unit # for reading "execution environment" parameter file
+C     modelDataUnit :: Unit number for reading "model" parameter file.
+C     numberOfProcs :: Number of processes computing in parallel
+C     pidIO         :: Id of process to use for I/O.
+C     myBxLo, myBxHi :: Extents of domain in blocks in X and Y
+C     myByLo, myByHi :: that each threads is responsble for.
+C     myProcId      :: My own "process" id.
+C     myPx          :: My X coord on the proc. grid.
+C     myPy          :: My Y coord on the proc. grid.
+C     myXGlobalLo   :: My bottom-left (south-west) x-index global domain.
+C                      The x-coordinate of this point in for example m or
+C                      degrees is *not* specified here. A model needs to
+C                      provide a mechanism for deducing that information
+C                      if it is needed.
+C     myYGlobalLo   :: My bottom-left (south-west) y-index in global domain.
+C                      The y-coordinate of this point in for example m or
+C                      degrees is *not* specified here. A model needs to
+C                      provide a mechanism for deducing that information
+C                      if it is needed.
+C     nThreads      :: No. of threads
+C     nTx, nTy      :: No. of threads in X and in Y
+C                      This assumes a simple cartesian gridding of the threads
+C                      which is not required elsewhere but that makes it easier
+C     ioErrorCount  :: IO Error Counter. Set to zero initially and increased
+C                      by one every time an IO error occurs.
+      COMMON /EEPARAMS_I/
+     &  errorMessageUnit, standardMessageUnit, maxLengthPrt1D,
+     &  scrUnit1, scrUnit2, eeDataUnit, modelDataUnit,
+     &  numberOfProcs, pidIO, myProcId,
+     &  myPx, myPy, myXGlobalLo, myYGlobalLo, nThreads,
+     &  myBxLo, myBxHi, myByLo, myByHi,
+     &  nTx, nTy, ioErrorCount
+      INTEGER errorMessageUnit
+      INTEGER standardMessageUnit
+      INTEGER maxLengthPrt1D
+      INTEGER scrUnit1
+      INTEGER scrUnit2
+      INTEGER eeDataUnit
+      INTEGER modelDataUnit
+      INTEGER ioErrorCount(MAX_NO_THREADS)
+      INTEGER myBxLo(MAX_NO_THREADS)
+      INTEGER myBxHi(MAX_NO_THREADS)
+      INTEGER myByLo(MAX_NO_THREADS)
+      INTEGER myByHi(MAX_NO_THREADS)
+      INTEGER myProcId
+      INTEGER myPx
+      INTEGER myPy
+      INTEGER myXGlobalLo
+      INTEGER myYGlobalLo
+      INTEGER nThreads
+      INTEGER nTx
+      INTEGER nTy
+      INTEGER numberOfProcs
+      INTEGER pidIO
+
+C---+----1----+----2----+----3----+----4----+----5----+----6----+----7-|--+----|
+
+C $Header: /u/gcmpack/MITgcm/model/inc/PARAMS.h,v 1.276 2014/08/07 18:43:33 heimbach Exp $
+C $Name:  $
+C
+
+CBOP
+C     !ROUTINE: PARAMS.h
+C     !INTERFACE:
+C     #include PARAMS.h
+
+C     !DESCRIPTION:
+C     Header file defining model "parameters".  The values from the
+C     model standard input file are stored into the variables held
+C     here. Notes describing the parameters can also be found here.
+
+CEOP
+
+C--   Contants
+C     Useful physical values
+      Real*8 PI
+      PARAMETER ( PI    = 3.14159265358979323844D0   )
+      Real*8 deg2rad
+      PARAMETER ( deg2rad = 2.D0*PI/360.D0           )
+
+C--   COMMON /PARM_C/ Character valued parameters used by the model.
+C     buoyancyRelation :: Flag used to indicate which relation to use to
+C                         get buoyancy.
+C     eosType         :: choose the equation of state:
+C                        LINEAR, POLY3, UNESCO, JMD95Z, JMD95P, MDJWF, IDEALGAS
+C     pickupSuff      :: force to start from pickup files (even if nIter0=0)
+C                        and read pickup files with this suffix (max 10 Char.)
+C     mdsioLocalDir   :: read-write tiled file from/to this directory name
+C                        (+ 4 digits Processor-Rank) instead of current dir.
+C     adTapeDir       :: read-write checkpointing tape files from/to this
+C                        directory name instead of current dir. Conflicts
+C                        mdsioLocalDir, so only one of the two can be set.
+C                        In contrast to mdsioLocalDir, if specified adTapeDir
+C                        must exist before the model starts.
+C     tRefFile      :: File containing reference Potential Temperat.  tRef (1.D)
+C     sRefFile      :: File containing reference salinity/spec.humid. sRef (1.D)
+C     rhoRefFile    :: File containing reference density profile rhoRef (1.D)
+C     gravityFile   :: File containing gravity vertical profile (1.D)
+C     delRFile      :: File containing vertical grid spacing delR  (1.D array)
+C     delRcFile     :: File containing vertical grid spacing delRc (1.D array)
+C     hybSigmFile   :: File containing hybrid-sigma vertical coord. coeff. (2x 1.D)
+C     delXFile      :: File containing X-spacing grid definition (1.D array)
+C     delYFile      :: File containing Y-spacing grid definition (1.D array)
+C     horizGridFile :: File containing horizontal-grid definition
+C                        (only when using curvilinear_grid)
+C     bathyFile       :: File containing bathymetry. If not defined bathymetry
+C                        is taken from inline function.
+C     topoFile        :: File containing the topography of the surface (unit=m)
+C                        (mainly used for the atmosphere = ground height).
+C     addWwallFile    :: File containing 2-D additional Western  cell-edge wall
+C     addSwallFile    :: File containing 2-D additional Southern cell-edge wall
+C                        (e.g., to add "thin-wall" where it is =1)
+C     hydrogThetaFile :: File containing initial hydrographic data (3-D)
+C                        for potential temperature.
+C     hydrogSaltFile  :: File containing initial hydrographic data (3-D)
+C                        for salinity.
+C     diffKrFile      :: File containing 3D specification of vertical diffusivity
+C     viscAhDfile     :: File containing 3D specification of horizontal viscosity
+C     viscAhZfile     :: File containing 3D specification of horizontal viscosity
+C     viscA4Dfile     :: File containing 3D specification of horizontal viscosity
+C     viscA4Zfile     :: File containing 3D specification of horizontal viscosity
+C     zonalWindFile   :: File containing zonal wind data
+C     meridWindFile   :: File containing meridional wind data
+C     thetaClimFile   :: File containing surface theta climataology used
+C                        in relaxation term -lambda(theta-theta*)
+C     saltClimFile    :: File containing surface salt climataology used
+C                        in relaxation term -lambda(salt-salt*)
+C     surfQfile       :: File containing surface heat flux, excluding SW
+C                        (old version, kept for backward compatibility)
+C     surfQnetFile    :: File containing surface net heat flux
+C     surfQswFile     :: File containing surface shortwave radiation
+C     EmPmRfile       :: File containing surface fresh water flux
+C           NOTE: for backward compatibility EmPmRfile is specified in
+C                 m/s when using external_fields_load.F.  It is converted
+C                 to kg/m2/s by multiplying by rhoConstFresh.
+C     saltFluxFile    :: File containing surface salt flux
+C     pLoadFile       :: File containing pressure loading
+C     geoPotAnomFile  :: File containing constant geopotential anomaly due to
+C                        density structure
+C     addMassFile     :: File containing source/sink of fluid in the interior
+C     eddyPsiXFile    :: File containing zonal Eddy streamfunction data
+C     eddyPsiYFile    :: File containing meridional Eddy streamfunction data
+C     geothermalFile  :: File containing geothermal heat flux
+C     lambdaThetaFile :: File containing SST relaxation coefficient
+C     lambdaSaltFile  :: File containing SSS relaxation coefficient
+C     wghtBalanceFile :: File containing weight used in balancing net EmPmR
+C     the_run_name    :: string identifying the name of the model "run"
+      COMMON /PARM_C/
+     &                buoyancyRelation, eosType,
+     &                pickupSuff, mdsioLocalDir, adTapeDir,
+     &                tRefFile, sRefFile, rhoRefFile, gravityFile,
+     &                delRFile, delRcFile, hybSigmFile,
+     &                delXFile, delYFile, horizGridFile,
+     &                bathyFile, topoFile, addWwallFile, addSwallFile,
+     &                viscAhDfile, viscAhZfile,
+     &                viscA4Dfile, viscA4Zfile,
+     &                hydrogThetaFile, hydrogSaltFile, diffKrFile,
+     &                zonalWindFile, meridWindFile, thetaClimFile,
+     &                saltClimFile,
+     &                EmPmRfile, saltFluxFile,
+     &                surfQfile, surfQnetFile, surfQswFile,
+     &                uVelInitFile, vVelInitFile, pSurfInitFile,
+     &                pLoadFile, geoPotAnomFile, addMassFile,
+     &                eddyPsiXFile, eddyPsiYFile, geothermalFile,
+     &                lambdaThetaFile, lambdaSaltFile, wghtBalanceFile,
+     &                the_run_name
+      CHARACTER*(MAX_LEN_FNAM) buoyancyRelation
+      CHARACTER*(6)  eosType
+      CHARACTER*(10) pickupSuff
+      CHARACTER*(MAX_LEN_FNAM) mdsioLocalDir
+      CHARACTER*(MAX_LEN_FNAM) adTapeDir
+      CHARACTER*(MAX_LEN_FNAM) tRefFile
+      CHARACTER*(MAX_LEN_FNAM) sRefFile
+      CHARACTER*(MAX_LEN_FNAM) rhoRefFile
+      CHARACTER*(MAX_LEN_FNAM) gravityFile
+      CHARACTER*(MAX_LEN_FNAM) delRFile
+      CHARACTER*(MAX_LEN_FNAM) delRcFile
+      CHARACTER*(MAX_LEN_FNAM) hybSigmFile
+      CHARACTER*(MAX_LEN_FNAM) delXFile
+      CHARACTER*(MAX_LEN_FNAM) delYFile
+      CHARACTER*(MAX_LEN_FNAM) horizGridFile
+      CHARACTER*(MAX_LEN_FNAM) bathyFile, topoFile
+      CHARACTER*(MAX_LEN_FNAM) addWwallFile, addSwallFile
+      CHARACTER*(MAX_LEN_FNAM) hydrogThetaFile, hydrogSaltFile
+      CHARACTER*(MAX_LEN_FNAM) diffKrFile
+      CHARACTER*(MAX_LEN_FNAM) viscAhDfile
+      CHARACTER*(MAX_LEN_FNAM) viscAhZfile
+      CHARACTER*(MAX_LEN_FNAM) viscA4Dfile
+      CHARACTER*(MAX_LEN_FNAM) viscA4Zfile
+      CHARACTER*(MAX_LEN_FNAM) zonalWindFile
+      CHARACTER*(MAX_LEN_FNAM) meridWindFile
+      CHARACTER*(MAX_LEN_FNAM) thetaClimFile
+      CHARACTER*(MAX_LEN_FNAM) saltClimFile
+      CHARACTER*(MAX_LEN_FNAM) surfQfile
+      CHARACTER*(MAX_LEN_FNAM) surfQnetFile
+      CHARACTER*(MAX_LEN_FNAM) surfQswFile
+      CHARACTER*(MAX_LEN_FNAM) EmPmRfile
+      CHARACTER*(MAX_LEN_FNAM) saltFluxFile
+      CHARACTER*(MAX_LEN_FNAM) uVelInitFile
+      CHARACTER*(MAX_LEN_FNAM) vVelInitFile
+      CHARACTER*(MAX_LEN_FNAM) pSurfInitFile
+      CHARACTER*(MAX_LEN_FNAM) pLoadFile
+      CHARACTER*(MAX_LEN_FNAM) geoPotAnomFile
+      CHARACTER*(MAX_LEN_FNAM) addMassFile
+      CHARACTER*(MAX_LEN_FNAM) eddyPsiXFile
+      CHARACTER*(MAX_LEN_FNAM) eddyPsiYFile
+      CHARACTER*(MAX_LEN_FNAM) geothermalFile
+      CHARACTER*(MAX_LEN_FNAM) lambdaThetaFile
+      CHARACTER*(MAX_LEN_FNAM) lambdaSaltFile
+      CHARACTER*(MAX_LEN_FNAM) wghtBalanceFile
+      CHARACTER*(MAX_LEN_PREC/2) the_run_name
+
+C--   COMMON /PARM_I/ Integer valued parameters used by the model.
+C     cg2dMaxIters        :: Maximum number of iterations in the
+C                            two-dimensional con. grad solver.
+C     cg2dMinItersNSA     :: Minimum number of iterations in the
+C                            not-self-adjoint version (cg2d_nsa.F) of the
+C                            two-dimensional con. grad solver (default = 0).
+C     cg2dPreCondFreq     :: Frequency for updating cg2d preconditioner
+C                            (non-linear free-surf.)
+C     cg2dUseMinResSol    :: =0 : use last-iteration/converged solution
+C                            =1 : use solver minimum-residual solution
+C     cg3dMaxIters        :: Maximum number of iterations in the
+C                            three-dimensional con. grad solver.
+C     printResidualFreq   :: Frequency for printing residual in CG iterations
+C     nIter0              :: Start time-step number of for this run
+C     nTimeSteps          :: Number of timesteps to execute
+C     nTimeSteps_l2       :: Number of inner timesteps to execute per timestep
+C     selectCoriMap       :: select setting of Coriolis parameter map:
+C                           =0 f-Plane (Constant Coriolis, = f0)
+C                           =1 Beta-Plane Coriolis (= f0 + beta.y)
+C                           =2 Spherical Coriolis (= 2.omega.sin(phi))
+C                           =3 Read Coriolis 2-d fields from files.
+C     selectSigmaCoord    :: option related to sigma vertical coordinate
+C     nonlinFreeSurf      :: option related to non-linear free surface
+C                           =0 Linear free surface ; >0 Non-linear
+C     select_rStar        :: option related to r* vertical coordinate
+C                           =0 (default) use r coord. ; > 0 use r*
+C     selectNHfreeSurf    :: option for Non-Hydrostatic (free-)Surface formulation:
+C                           =0 (default) hydrostatic surf. ; > 0 add NH effects.
+C     selectP_inEOS_Zc    :: select which pressure to use in EOS (for z-coords)
+C                           =0: simply: -g*rhoConst*z
+C                           =1: use pRef = integral{-g*rho(Tref,Sref,pRef)*dz}
+C                           =2: use hydrostatic dynamical pressure
+C                           =3: use full (Hyd+NH) dynamical pressure
+C     selectAddFluid      :: option to add mass source/sink of fluid in the interior
+C                            (3-D generalisation of oceanic real-fresh water flux)
+C                           =0 off ; =1 add fluid ; =-1 virtual flux (no mass added)
+C     selectBalanceEmPmR  :: option to balance net surface fresh-water flux:
+C                           =0 off ; =1 uniform correction ; = 2 weighted correction
+C     selectImplicitDrag  :: select Implicit treatment of bottom/top drag
+C                           = 0: fully explicit
+C                           = 1: implicit on provisional velocity
+C                                (i.e., before grad.Eta increment)
+C                           = 2: fully implicit (combined with Impl Surf.Press)
+C     momForcingOutAB     :: =1: take momentum forcing contribution
+C                            out of (=0: in) Adams-Bashforth time stepping.
+C     tracForcingOutAB    :: =1: take tracer (Temp,Salt,pTracers) forcing contribution
+C                            out of (=0: in) Adams-Bashforth time stepping.
+C     tempAdvScheme       :: Temp. Horiz.Advection scheme selector
+C     tempVertAdvScheme   :: Temp. Vert. Advection scheme selector
+C     saltAdvScheme       :: Salt. Horiz.advection scheme selector
+C     saltVertAdvScheme   :: Salt. Vert. Advection scheme selector
+C     selectKEscheme      :: Kinetic Energy scheme selector (Vector Inv.)
+C     selectVortScheme    :: Scheme selector for Vorticity term (Vector Inv.)
+C     selectMetricTerms   :: Scheme selector for Metric terms (Flux-Form)
+C     selectCoriScheme    :: Scheme selector for Coriolis term
+C     select3dCoriScheme  :: Scheme selector for 3-D Coriolis (in Omega.cos Phi)
+C     selectBotDragQuadr  :: quadratic bottom drag discretisation option:
+C                           =0: average KE from grid center to U & V location
+C                           =1: use local velocity norm @ U & V location
+C                           =2: same with wet-point averaging of other component
+C     pCellMix_select     :: select option to enhance mixing near surface & bottom
+C                            unit digit: near bottom ; tens digit: near surface
+C                            with digit =0 : disable ;
+C                           = 1 : increases mixing linearly with recip_hFac
+C                           = 2,3,4 : increases mixing by recip_hFac^(2,3,4)
+C     readBinaryPrec      :: Precision used for reading binary files
+C     writeBinaryPrec     :: Precision used for writing binary files
+C     rwSuffixType        :: controls the format of the mds file suffix.
+C                          =0 (default): use iteration number (myIter, I10.10);
+C                          =1: 100*myTime (100th sec); =2: myTime (seconds);
+C                          =3: myTime/360 (10th of hr); =4: myTime/3600 (hours).
+C     monitorSelect       :: select group of variables to monitor
+C                            =1 : dynvars ; =2 : + vort ; =3 : + surface
+C-    debugLevel          :: controls printing of algorithm intermediate results
+C                            and statistics ; higher -> more writing
+C-    plotLevel           :: controls printing of field maps ; higher -> more flds
+
+      COMMON /PARM_I/
+     &        cg2dMaxIters, cg2dMinItersNSA,
+     &        cg2dPreCondFreq, cg2dUseMinResSol,
+     &        cg3dMaxIters, printResidualFreq,
+     &        nIter0, nTimeSteps, nTimeSteps_l2, nEndIter,
+     &        selectCoriMap,
+     &        selectSigmaCoord,
+     &        nonlinFreeSurf, select_rStar,
+     &        selectNHfreeSurf, selectP_inEOS_Zc,
+     &        selectAddFluid, selectBalanceEmPmR, selectImplicitDrag,
+     &        momForcingOutAB, tracForcingOutAB,
+     &        tempAdvScheme, tempVertAdvScheme,
+     &        saltAdvScheme, saltVertAdvScheme,
+     &        selectKEscheme, selectVortScheme, selectMetricTerms,
+     &        selectCoriScheme, select3dCoriScheme,
+     &        selectBotDragQuadr, pCellMix_select,
+     &        readBinaryPrec, writeBinaryPrec,
+     &        rwSuffixType, monitorSelect, debugLevel, plotLevel
+      INTEGER cg2dMaxIters
+      INTEGER cg2dMinItersNSA
+      INTEGER cg2dPreCondFreq
+      INTEGER cg2dUseMinResSol
+      INTEGER cg3dMaxIters
+      INTEGER printResidualFreq
+      INTEGER nIter0
+      INTEGER nTimeSteps
+      INTEGER nTimeSteps_l2
+      INTEGER nEndIter
+      INTEGER selectCoriMap
+      INTEGER selectSigmaCoord
+      INTEGER nonlinFreeSurf
+      INTEGER select_rStar
+      INTEGER selectNHfreeSurf
+      INTEGER selectP_inEOS_Zc
+      INTEGER selectAddFluid
+      INTEGER selectBalanceEmPmR
+      INTEGER selectImplicitDrag
+      INTEGER momForcingOutAB, tracForcingOutAB
+      INTEGER tempAdvScheme, tempVertAdvScheme
+      INTEGER saltAdvScheme, saltVertAdvScheme
+      INTEGER selectKEscheme
+      INTEGER selectVortScheme
+      INTEGER selectMetricTerms
+      INTEGER selectCoriScheme
+      INTEGER select3dCoriScheme
+      INTEGER selectBotDragQuadr
+      INTEGER pCellMix_select
+      INTEGER readBinaryPrec
+      INTEGER writeBinaryPrec
+      INTEGER rwSuffixType
+      INTEGER monitorSelect
+      INTEGER debugLevel
+      INTEGER plotLevel
+
+C--   COMMON /PARM_L/ Logical valued parameters used by the model.
+C- Coordinate + Grid params:
+C     fluidIsAir       :: Set to indicate that the fluid major constituent
+C                         is air
+C     fluidIsWater     :: Set to indicate that the fluid major constituent
+C                         is water
+C     usingPCoords     :: Set to indicate that we are working in a pressure
+C                         type coordinate (p or p*).
+C     usingZCoords     :: Set to indicate that we are working in a height
+C                         type coordinate (z or z*)
+C     usingCartesianGrid :: If TRUE grid generation will be in a cartesian
+C                           coordinate frame.
+C     usingSphericalPolarGrid :: If TRUE grid generation will be in a
+C                                spherical polar frame.
+C     rotateGrid      :: rotate grid coordinates to geographical coordinates
+C                        according to Euler angles phiEuler, thetaEuler, psiEuler
+C     usingCylindricalGrid :: If TRUE grid generation will be Cylindrical
+C     usingCurvilinearGrid :: If TRUE, use a curvilinear grid (to be provided)
+C     hasWetCSCorners :: domain contains CS-type corners where dynamics is solved
+C     deepAtmosphere :: deep model (drop the shallow-atmosphere approximation)
+C     setInterFDr    :: set Interface depth (put cell-Center at the middle)
+C     setCenterDr    :: set cell-Center depth (put Interface at the middle)
+C     useMin4hFacEdges :: set hFacW,hFacS as minimum of adjacent hFacC factor
+C     interViscAr_pCell :: account for partial-cell in interior vert. viscosity
+C     interDiffKr_pCell :: account for partial-cell in interior vert. diffusion
+C- Momentum params:
+C     no_slip_sides  :: Impose "no-slip" at lateral boundaries.
+C     no_slip_bottom :: Impose "no-slip" at bottom boundary.
+C     bottomVisc_pCell :: account for partial-cell in bottom visc. (no-slip BC)
+C     useSmag3D      :: Use isotropic 3-D Smagorinsky
+C     useFullLeith   :: Set to true to use full Leith viscosity(may be unstable
+C                       on irregular grids)
+C     useStrainTensionVisc:: Set to true to use Strain-Tension viscous terms
+C     useAreaViscLength :: Set to true to use old scaling for viscous lengths,
+C                          e.g., L2=Raz.  May be preferable for cube sphere.
+C     momViscosity  :: Flag which turns momentum friction terms on and off.
+C     momAdvection  :: Flag which turns advection of momentum on and off.
+C     momForcing    :: Flag which turns external forcing of momentum on and off.
+C     momTidalForcing    :: Flag which turns tidal forcing on and off.
+C     momPressureForcing :: Flag which turns pressure term in momentum equation
+C                          on and off.
+C     useNHMTerms   :: If TRUE use non-hydrostatic metric terms.
+C     useCoriolis   :: Flag which turns the coriolis terms on and off.
+C     useCDscheme   :: use CD-scheme to calculate Coriolis terms.
+C     vectorInvariantMomentum :: use Vector-Invariant form (mom_vecinv package)
+C                                (default = F = use mom_fluxform package)
+C     useJamartMomAdv :: Use wet-point method for V.I. non-linear term
+C     upwindVorticity :: bias interpolation of vorticity in the Coriolis term
+C     highOrderVorticity :: use 3rd/4th order interp. of vorticity (V.I., advection)
+C     useAbsVorticity :: work with f+zeta in Coriolis terms
+C     upwindShear     :: use 1rst order upwind interp. (V.I., vertical advection)
+C     momStepping    :: Turns momentum equation time-stepping off
+C     calc_wVelocity :: Turns vertical velocity calculation off
+C- Temp. & Salt params:
+C     tempStepping   :: Turns temperature equation time-stepping on/off
+C     saltStepping   :: Turns salinity equation time-stepping on/off
+C     addFrictionHeating :: account for frictional heating
+C     temp_stayPositive :: use Smolarkiewicz Hack to ensure Temp stays positive
+C     salt_stayPositive :: use Smolarkiewicz Hack to ensure Salt stays positive
+C     tempAdvection  :: Flag which turns advection of temperature on and off.
+C     tempVertDiff4  :: use vertical bi-harmonic diffusion for temperature
+C     tempIsActiveTr :: Pot.Temp. is a dynamically active tracer
+C     tempForcing    :: Flag which turns external forcing of temperature on/off
+C     saltAdvection  :: Flag which turns advection of salinity on and off.
+C     saltVertDiff4  :: use vertical bi-harmonic diffusion for salinity
+C     saltIsActiveTr :: Salinity  is a dynamically active tracer
+C     saltForcing    :: Flag which turns external forcing of salinity on/off
+C     maskIniTemp    :: apply mask to initial Pot.Temp.
+C     maskIniSalt    :: apply mask to initial salinity
+C     checkIniTemp   :: check for points with identically zero initial Pot.Temp.
+C     checkIniSalt   :: check for points with identically zero initial salinity
+C- Pressure solver related parameters (PARM02)
+C     useNSACGSolver :: Set to true to use "not self-adjoint" conjugate
+C                       gradient solver that stores the iteration history
+C                       for an iterative adjoint as accuate as possible
+C     useSRCGSolver  :: Set to true to use conjugate gradient
+C                       solver with single reduction (only one call of
+C                       s/r mpi_allreduce), default is false
+C- Time-stepping & free-surface params:
+C     rigidLid            :: Set to true to use rigid lid
+C     implicitFreeSurface :: Set to true to use implicit free surface
+C     uniformLin_PhiSurf  :: Set to true to use a uniform Bo_surf in the
+C                            linear relation Phi_surf = Bo_surf*eta
+C     uniformFreeSurfLev  :: TRUE if free-surface level-index is uniform (=1)
+C     exactConserv        :: Set to true to conserve exactly the total Volume
+C     linFSConserveTr     :: Set to true to correct source/sink of tracer
+C                            at the surface due to Linear Free Surface
+C     useRealFreshWaterFlux :: if True (=Natural BCS), treats P+R-E flux
+C                         as a real Fresh Water (=> changes the Sea Level)
+C                         if F, converts P+R-E to salt flux (no SL effect)
+C     storePhiHyd4Phys :: store hydrostatic potential for use in Physics/EOS
+C                         this requires specific code for restart & exchange
+C     quasiHydrostatic :: Using non-hydrostatic terms in hydrostatic algorithm
+C     nonHydrostatic   :: Using non-hydrostatic algorithm
+C     use3Dsolver      :: set to true to use 3-D pressure solver
+C     implicitIntGravWave :: treat Internal Gravity Wave implicitly
+C     staggerTimeStep   :: enable a Stagger time stepping U,V (& W) then T,S
+C     applyExchUV_early :: Apply EXCH to U,V earlier, just before integr_continuity
+C     doResetHFactors   :: Do reset thickness factors @ beginning of each time-step
+C     implicitDiffusion :: Turns implicit vertical diffusion on
+C     implicitViscosity :: Turns implicit vertical viscosity on
+C     tempImplVertAdv   :: Turns on implicit vertical advection for Temperature
+C     saltImplVertAdv   :: Turns on implicit vertical advection for Salinity
+C     momImplVertAdv    :: Turns on implicit vertical advection for Momentum
+C     multiDimAdvection :: Flag that enable multi-dimension advection
+C     useMultiDimAdvec  :: True if multi-dim advection is used at least once
+C     momDissip_In_AB   :: if False, put Dissipation tendency contribution
+C                          out off Adams-Bashforth time stepping.
+C     doAB_onGtGs       :: if the Adams-Bashforth time stepping is used, always
+C                          apply AB on tracer tendencies (rather than on Tracer)
+C- Other forcing params -
+C     balanceQnet     :: substract global mean of Qnet at every time step
+C     balancePrintMean:: print substracted global means to STDOUT
+C     doThetaClimRelax :: Set true if relaxation to temperature
+C                        climatology is required.
+C     doSaltClimRelax  :: Set true if relaxation to salinity
+C                        climatology is required.
+C     balanceThetaClimRelax :: substract global mean effect at every time step
+C     balanceSaltClimRelax :: substract global mean effect at every time step
+C     allowFreezing  :: Allows surface water to freeze and form ice
+C     periodicExternalForcing :: Set true if forcing is time-dependant
+C- I/O parameters -
+C     globalFiles    :: Selects between "global" and "tiled" files.
+C                       On some platforms with MPI, option globalFiles is either
+C                       slow or does not work. Use useSingleCpuIO instead.
+C     useSingleCpuIO :: moved to EEPARAMS.h
+C     pickupStrictlyMatch :: check and stop if pickup-file do not stricly match
+C     startFromPickupAB2 :: with AB-3 code, start from an AB-2 pickup
+C     usePickupBeforeC54 :: start from old-pickup files, generated with code from
+C                           before checkpoint-54a, Jul 06, 2004.
+C     pickup_write_mdsio :: use mdsio to write pickups
+C     pickup_read_mdsio  :: use mdsio to read  pickups
+C     pickup_write_immed :: echo the pickup immediately (for conversion)
+C     writePickupAtEnd   :: write pickup at the last timestep
+C     timeave_mdsio      :: use mdsio for timeave output
+C     snapshot_mdsio     :: use mdsio for "snapshot" (dumpfreq/diagfreq) output
+C     monitor_stdio      :: use stdio for monitor output
+C     dumpInitAndLast :: dumps model state to files at Initial (nIter0)
+C                        & Last iteration, in addition multiple of dumpFreq iter.
+
+      COMMON /PARM_L/
+     & fluidIsAir, fluidIsWater,
+     & usingPCoords, usingZCoords,
+     & usingCartesianGrid, usingSphericalPolarGrid, rotateGrid,
+     & usingCylindricalGrid, usingCurvilinearGrid, hasWetCSCorners,
+     & deepAtmosphere, setInterFDr, setCenterDr, useMin4hFacEdges,
+     & interViscAr_pCell, interDiffKr_pCell,
+     & no_slip_sides, no_slip_bottom, bottomVisc_pCell, useSmag3D,
+     & useFullLeith, useStrainTensionVisc, useAreaViscLength,
+     & momViscosity, momAdvection, momForcing, momTidalForcing,
+     & momPressureForcing, useNHMTerms,
+     & useCoriolis, useCDscheme, vectorInvariantMomentum,
+     & useJamartMomAdv, upwindVorticity, highOrderVorticity,
+     & useAbsVorticity, upwindShear,
+     & momStepping, calc_wVelocity, tempStepping, saltStepping,
+     & addFrictionHeating, temp_stayPositive, salt_stayPositive,
+     & tempAdvection, tempVertDiff4, tempIsActiveTr, tempForcing,
+     & saltAdvection, saltVertDiff4, saltIsActiveTr, saltForcing,
+     & maskIniTemp, maskIniSalt, checkIniTemp, checkIniSalt,
+     & useNSACGSolver, useSRCGSolver,
+     & rigidLid, implicitFreeSurface,
+     & uniformLin_PhiSurf, uniformFreeSurfLev,
+     & exactConserv, linFSConserveTr, useRealFreshWaterFlux,
+     & storePhiHyd4Phys, quasiHydrostatic, nonHydrostatic,
+     & use3Dsolver, implicitIntGravWave, staggerTimeStep,
+     & applyExchUV_early, doResetHFactors,
+     & implicitDiffusion, implicitViscosity,
+     & tempImplVertAdv, saltImplVertAdv, momImplVertAdv,
+     & multiDimAdvection, useMultiDimAdvec,
+     & momDissip_In_AB, doAB_onGtGs,
+     & balanceQnet, balancePrintMean,
+     & balanceThetaClimRelax, balanceSaltClimRelax,
+     & doThetaClimRelax, doSaltClimRelax,
+     & allowFreezing,
+     & periodicExternalForcing,
+     & globalFiles,
+     & pickupStrictlyMatch, usePickupBeforeC54, startFromPickupAB2,
+     & pickup_read_mdsio, pickup_write_mdsio, pickup_write_immed,
+     & writePickupAtEnd,
+     & timeave_mdsio, snapshot_mdsio, monitor_stdio,
+     & outputTypesInclusive, dumpInitAndLast
+
+      LOGICAL fluidIsAir
+      LOGICAL fluidIsWater
+      LOGICAL usingPCoords
+      LOGICAL usingZCoords
+      LOGICAL usingCartesianGrid
+      LOGICAL usingSphericalPolarGrid, rotateGrid
+      LOGICAL usingCylindricalGrid
+      LOGICAL usingCurvilinearGrid, hasWetCSCorners
+      LOGICAL deepAtmosphere
+      LOGICAL setInterFDr
+      LOGICAL setCenterDr
+      LOGICAL useMin4hFacEdges
+      LOGICAL interViscAr_pCell
+      LOGICAL interDiffKr_pCell
+
+      LOGICAL no_slip_sides
+      LOGICAL no_slip_bottom
+      LOGICAL bottomVisc_pCell
+      LOGICAL useSmag3D
+      LOGICAL useFullLeith
+      LOGICAL useStrainTensionVisc
+      LOGICAL useAreaViscLength
+      LOGICAL momViscosity
+      LOGICAL momAdvection
+      LOGICAL momForcing
+      LOGICAL momTidalForcing
+      LOGICAL momPressureForcing
+      LOGICAL useNHMTerms
+
+      LOGICAL useCoriolis
+      LOGICAL useCDscheme
+      LOGICAL vectorInvariantMomentum
+      LOGICAL useJamartMomAdv
+      LOGICAL upwindVorticity
+      LOGICAL highOrderVorticity
+      LOGICAL useAbsVorticity
+      LOGICAL upwindShear
+      LOGICAL momStepping
+      LOGICAL calc_wVelocity
+      LOGICAL tempStepping
+      LOGICAL saltStepping
+      LOGICAL addFrictionHeating
+      LOGICAL temp_stayPositive
+      LOGICAL salt_stayPositive
+      LOGICAL tempAdvection
+      LOGICAL tempVertDiff4
+      LOGICAL tempIsActiveTr
+      LOGICAL tempForcing
+      LOGICAL saltAdvection
+      LOGICAL saltVertDiff4
+      LOGICAL saltIsActiveTr
+      LOGICAL saltForcing
+      LOGICAL maskIniTemp
+      LOGICAL maskIniSalt
+      LOGICAL checkIniTemp
+      LOGICAL checkIniSalt
+      LOGICAL useNSACGSolver
+      LOGICAL useSRCGSolver
+      LOGICAL rigidLid
+      LOGICAL implicitFreeSurface
+      LOGICAL uniformLin_PhiSurf
+      LOGICAL uniformFreeSurfLev
+      LOGICAL exactConserv
+      LOGICAL linFSConserveTr
+      LOGICAL useRealFreshWaterFlux
+      LOGICAL storePhiHyd4Phys
+      LOGICAL quasiHydrostatic
+      LOGICAL nonHydrostatic
+      LOGICAL use3Dsolver
+      LOGICAL implicitIntGravWave
+      LOGICAL staggerTimeStep
+      LOGICAL applyExchUV_early
+      LOGICAL doResetHFactors
+      LOGICAL implicitDiffusion
+      LOGICAL implicitViscosity
+      LOGICAL tempImplVertAdv
+      LOGICAL saltImplVertAdv
+      LOGICAL momImplVertAdv
+      LOGICAL multiDimAdvection
+      LOGICAL useMultiDimAdvec
+      LOGICAL momDissip_In_AB
+      LOGICAL doAB_onGtGs
+      LOGICAL balanceQnet
+      LOGICAL balancePrintMean
+      LOGICAL doThetaClimRelax
+      LOGICAL doSaltClimRelax
+      LOGICAL balanceThetaClimRelax
+      LOGICAL balanceSaltClimRelax
+      LOGICAL allowFreezing
+      LOGICAL periodicExternalForcing
+      LOGICAL globalFiles
+      LOGICAL pickupStrictlyMatch
+      LOGICAL usePickupBeforeC54
+      LOGICAL startFromPickupAB2
+      LOGICAL pickup_read_mdsio, pickup_write_mdsio
+      LOGICAL pickup_write_immed, writePickupAtEnd
+      LOGICAL timeave_mdsio, snapshot_mdsio, monitor_stdio
+      LOGICAL outputTypesInclusive
+      LOGICAL dumpInitAndLast
+
+C--   COMMON /PARM_R/ "Real" valued parameters used by the model.
+C     cg2dTargetResidual
+C          :: Target residual for cg2d solver ; no unit (RHS normalisation)
+C     cg2dTargetResWunit
+C          :: Target residual for cg2d solver ; W unit (No RHS normalisation)
+C     cg3dTargetResidual
+C          :: Target residual for cg3d solver ; no unit (RHS normalisation)
+C     cg3dTargetResWunit
+C          :: Target residual for cg3d solver ; W unit (No RHS normalisation)
+C     cg2dpcOffDFac :: Averaging weight for preconditioner off-diagonal.
+C     Note. 20th May 1998
+C           I made a weird discovery! In the model paper we argue
+C           for the form of the preconditioner used here ( see
+C           A Finite-volume, Incompressible Navier-Stokes Model
+C           ...., Marshall et. al ). The algebra gives a simple
+C           0.5 factor for the averaging of ac and aCw to get a
+C           symmettric pre-conditioner. By using a factor of 0.51
+C           i.e. scaling the off-diagonal terms in the
+C           preconditioner down slightly I managed to get the
+C           number of iterations for convergence in a test case to
+C           drop form 192 -> 134! Need to investigate this further!
+C           For now I have introduced a parameter cg2dpcOffDFac which
+C           defaults to 0.51 but can be set at runtime.
+C     delR      :: Vertical grid spacing ( units of r ).
+C     delRc     :: Vertical grid spacing between cell centers (r unit).
+C     delX      :: Separation between cell faces (m) or (deg), depending
+C     delY         on input flags. Note: moved to header file SET_GRID.h
+C     xgOrigin   :: Origin of the X-axis (Cartesian Grid) / Longitude of Western
+C                :: most cell face (Lat-Lon grid) (Note: this is an "inert"
+C                :: parameter but it makes geographical references simple.)
+C     ygOrigin   :: Origin of the Y-axis (Cartesian Grid) / Latitude of Southern
+C                :: most face (Lat-Lon grid).
+C     rSphere    :: Radius of sphere for a spherical polar grid ( m ).
+C     recip_rSphere :: Reciprocal radius of sphere ( m^-1 ).
+C     radius_fromHorizGrid :: sphere Radius of input horiz. grid (Curvilinear Grid)
+C     seaLev_Z   :: the reference height of sea-level (usually zero)
+C     top_Pres   :: pressure (P-Coords) or reference pressure (Z-Coords) at the top
+C     rSigmaBnd  :: vertical position (in r-unit) of r/sigma transition (Hybrid-Sigma)
+C     gravity    :: Acceleration due to constant gravity ( m/s^2 )
+C     recip_gravity :: Reciprocal gravity acceleration ( s^2/m )
+C     gBaro      :: Accel. due to gravity used in barotropic equation ( m/s^2 )
+C     gravFacC   :: gravity factor (vs surf. gravity) vert. profile at cell-Center
+C     gravFacF   :: gravity factor (vs surf. gravity) vert. profile at cell-interF
+C     rhoNil     :: Reference density for the linear equation of state
+C     rhoConst   :: Vertically constant reference density (Boussinesq)
+C     rho1Ref    :: reference vertical profile for density (anelastic)
+C     rhoFacC    :: normalized (by rhoConst) reference density at cell-Center
+C     rhoFacF    :: normalized (by rhoConst) reference density at cell-interFace
+C     rhoConstFresh :: Constant reference density for fresh water (rain)
+C     thetaConst :: Constant reference for potential temperature
+C     tRef       :: reference vertical profile for potential temperature
+C     sRef       :: reference vertical profile for salinity/specific humidity
+C     rhoRef     :: density vertical profile from (tRef,sRef) [kg/m^3]
+C     dBdrRef    :: vertical gradient of reference buoyancy  [(m/s/r)^2]:
+C                :: z-coord: = N^2_ref = Brunt-Vaissala frequency [s^-2]
+C                :: p-coord: = -(d.alpha/dp)_ref          [(m^2.s/kg)^2]
+C     surf_pRef  :: surface reference pressure ( Pa )
+C     pRef4EOS   :: reference pressure used in EOS (case selectP_inEOS_Zc=1)
+C     phiRef     :: reference potential (press/rho, geopot) profile (m^2/s^2)
+C     rVel2wUnit :: units conversion factor (Non-Hydrostatic code),
+C                :: from r-coordinate vertical velocity to vertical velocity [m/s].
+C                :: z-coord: = 1 ; p-coord: wSpeed [m/s] = rVel [Pa/s] * rVel2wUnit
+C     wUnit2rVel :: units conversion factor (Non-Hydrostatic code),
+C                :: from vertical velocity [m/s] to r-coordinate vertical velocity.
+C                :: z-coord: = 1 ; p-coord: rVel [Pa/s] = wSpeed [m/s] * wUnit2rVel
+C     rUnit2z    :: units conversion factor (for ocean in P-coord, only fct of k),
+C                :: from r-coordinate to z [m] (at level center):
+C                :: z-coord: = 1 ; p-coord: dz [m] = dr [Pa] * rUnit2z
+C     z2rUnit    :: units conversion factor (for ocean in P-coord, only fct of k),
+C                :: from z [m] to r-coordinate (at level center):
+C                :: z-coord: = 1 ; p-coord: dr [Pa] = dz [m] * z2rUnit
+C     mass2rUnit :: units conversion factor (surface forcing),
+C                :: from mass per unit area [kg/m2] to vertical r-coordinate unit.
+C                :: z-coord: = 1/rhoConst ( [kg/m2] / rho = [m] ) ;
+C                :: p-coord: = gravity    ( [kg/m2] *  g = [Pa] ) ;
+C     rUnit2mass :: units conversion factor (surface forcing),
+C                :: from vertical r-coordinate unit to mass per unit area [kg/m2].
+C                :: z-coord: = rhoConst  ( [m] * rho = [kg/m2] ) ;
+C                :: p-coord: = 1/gravity ( [Pa] /  g = [kg/m2] ) ;
+C     sIceLoadFac:: factor to scale (and turn off) sIceLoad (sea-ice loading)
+C                   default = 1
+C     f0         :: Reference coriolis parameter ( 1/s )
+C                   ( Southern edge f for beta plane )
+C     beta       :: df/dy ( s^-1.m^-1 )
+C     fPrime     :: Second Coriolis parameter ( 1/s ), related to Y-component
+C                   of rotation (reference value = 2.Omega.Cos(Phi))
+C     omega      :: Angular velocity ( rad/s )
+C     rotationPeriod :: Rotation period (s) (= 2.pi/omega)
+C     viscArNr   :: vertical profile of Eddy viscosity coeff.
+C                   for vertical mixing of momentum ( units of r^2/s )
+C     viscAh     :: Eddy viscosity coeff. for mixing of
+C                   momentum laterally ( m^2/s )
+C     viscAhW    :: Eddy viscosity coeff. for mixing of vertical
+C                   momentum laterally, no effect for hydrostatic
+C                   model, defaults to viscAhD if unset ( m^2/s )
+C                   Not used if variable horiz. viscosity is used.
+C     viscA4     :: Biharmonic viscosity coeff. for mixing of
+C                   momentum laterally ( m^4/s )
+C     viscA4W    :: Biharmonic viscosity coeff. for mixing of vertical
+C                   momentum laterally, no effect for hydrostatic
+C                   model, defaults to viscA4D if unset ( m^2/s )
+C                   Not used if variable horiz. viscosity is used.
+C     viscAhD    :: Eddy viscosity coeff. for mixing of momentum laterally
+C                   (act on Divergence part) ( m^2/s )
+C     viscAhZ    :: Eddy viscosity coeff. for mixing of momentum laterally
+C                   (act on Vorticity  part) ( m^2/s )
+C     viscA4D    :: Biharmonic viscosity coeff. for mixing of momentum laterally
+C                   (act on Divergence part) ( m^4/s )
+C     viscA4Z    :: Biharmonic viscosity coeff. for mixing of momentum laterally
+C                   (act on Vorticity  part) ( m^4/s )
+C     smag3D_coeff     :: Isotropic 3-D Smagorinsky viscosity coefficient (-)
+C     smag3D_diffCoeff :: Isotropic 3-D Smagorinsky diffusivity coefficient (-)
+C     viscC2leith  :: Leith non-dimensional viscosity factor (grad(vort))
+C     viscC2leithD :: Modified Leith non-dimensional visc. factor (grad(div))
+C     viscC2LeithQG:: QG Leith non-dimensional viscosity factor
+C     viscC4leith  :: Leith non-dimensional viscosity factor (grad(vort))
+C     viscC4leithD :: Modified Leith non-dimensional viscosity factor (grad(div))
+C     viscC2smag   :: Smagorinsky non-dimensional viscosity factor (harmonic)
+C     viscC4smag   :: Smagorinsky non-dimensional viscosity factor (biharmonic)
+C     viscAhMax    :: Maximum eddy viscosity coeff. for mixing of
+C                    momentum laterally ( m^2/s )
+C     viscAhReMax  :: Maximum gridscale Reynolds number for eddy viscosity
+C                     coeff. for mixing of momentum laterally (non-dim)
+C     viscAhGrid   :: non-dimensional grid-size dependent viscosity
+C     viscAhGridMax:: maximum and minimum harmonic viscosity coefficients ...
+C     viscAhGridMin::  in terms of non-dimensional grid-size dependent visc.
+C     viscA4Max    :: Maximum biharmonic viscosity coeff. for mixing of
+C                     momentum laterally ( m^4/s )
+C     viscA4ReMax  :: Maximum Gridscale Reynolds number for
+C                     biharmonic viscosity coeff. momentum laterally (non-dim)
+C     viscA4Grid   :: non-dimensional grid-size dependent bi-harmonic viscosity
+C     viscA4GridMax:: maximum and minimum biharmonic viscosity coefficients ...
+C     viscA4GridMin::  in terms of non-dimensional grid-size dependent viscosity
+C     diffKhT   :: Laplacian diffusion coeff. for mixing of
+C                 heat laterally ( m^2/s )
+C     diffK4T   :: Biharmonic diffusion coeff. for mixing of
+C                 heat laterally ( m^4/s )
+C     diffKrNrT :: vertical profile of Laplacian diffusion coeff.
+C                 for mixing of heat vertically ( units of r^2/s )
+C     diffKr4T  :: vertical profile of Biharmonic diffusion coeff.
+C                 for mixing of heat vertically ( units of r^4/s )
+C     diffKhS  ::  Laplacian diffusion coeff. for mixing of
+C                 salt laterally ( m^2/s )
+C     diffK4S   :: Biharmonic diffusion coeff. for mixing of
+C                 salt laterally ( m^4/s )
+C     diffKrNrS :: vertical profile of Laplacian diffusion coeff.
+C                 for mixing of salt vertically ( units of r^2/s ),
+C     diffKr4S  :: vertical profile of Biharmonic diffusion coeff.
+C                 for mixing of salt vertically ( units of r^4/s )
+C     diffKrBL79surf :: T/S surface diffusivity (m^2/s) Bryan and Lewis, 1979
+C     diffKrBL79deep :: T/S deep diffusivity (m^2/s) Bryan and Lewis, 1979
+C     diffKrBL79scl  :: depth scale for arctan fn (m) Bryan and Lewis, 1979
+C     diffKrBL79Ho   :: depth offset for arctan fn (m) Bryan and Lewis, 1979
+C     BL79LatVary    :: polarwise of this latitude diffKrBL79 is applied with
+C                       gradual transition to diffKrBLEQ towards Equator
+C     diffKrBLEQsurf :: same as diffKrBL79surf but at Equator
+C     diffKrBLEQdeep :: same as diffKrBL79deep but at Equator
+C     diffKrBLEQscl  :: same as diffKrBL79scl but at Equator
+C     diffKrBLEQHo   :: same as diffKrBL79Ho but at Equator
+C     pCellMix_maxFac :: maximum enhanced mixing factor for thin partial-cell
+C     pCellMix_delR   :: thickness criteria   for too thin partial-cell
+C     pCellMix_viscAr :: vertical viscosity   for too thin partial-cell
+C     pCellMix_diffKr :: vertical diffusivity for too thin partial-cell
+C     deltaT    :: Default timestep ( s )
+C     deltaTClock  :: Timestep used as model "clock". This determines the
+C                    IO frequencies and is used in tagging output. It can
+C                    be totally different to the dynamical time. Typically
+C                    it will be the deep-water timestep for accelerated runs.
+C                    Frequency of checkpointing and dumping of the model state
+C                    are referenced to this clock. ( s )
+C     deltaTMom    :: Timestep for momemtum equations ( s )
+C     dTtracerLev  :: Timestep for tracer equations ( s ), function of level k
+C     deltaTFreeSurf :: Timestep for free-surface equation ( s )
+C     freeSurfFac  :: Parameter to turn implicit free surface term on or off
+C                     freeSurFac = 1. uses implicit free surface
+C                     freeSurFac = 0. uses rigid lid
+C     abEps        :: Adams-Bashforth-2 stabilizing weight
+C     alph_AB      :: Adams-Bashforth-3 primary factor
+C     beta_AB      :: Adams-Bashforth-3 secondary factor
+C     implicSurfPress :: parameter of the Crank-Nickelson time stepping :
+C                     Implicit part of Surface Pressure Gradient ( 0-1 )
+C     implicDiv2DFlow :: parameter of the Crank-Nickelson time stepping :
+C                     Implicit part of barotropic flow Divergence ( 0-1 )
+C     implicitNHPress :: parameter of the Crank-Nickelson time stepping :
+C                     Implicit part of Non-Hydrostatic Pressure Gradient ( 0-1 )
+C     hFacMin      :: Minimum fraction size of a cell (affects hFacC etc...)
+C     hFacMinDz    :: Minimum dimensional size of a cell (affects hFacC etc..., m)
+C     hFacMinDp    :: Minimum dimensional size of a cell (affects hFacC etc..., Pa)
+C     hFacMinDr    :: Minimum dimensional size of a cell (-> hFacC etc..., r units)
+C     hFacInf      :: Threshold (inf and sup) for fraction size of surface cell
+C     hFacSup          that control vanishing and creating levels
+C     tauCD         :: CD scheme coupling timescale ( s )
+C     rCD           :: CD scheme normalised coupling parameter (= 1 - deltaT/tauCD)
+C     epsAB_CD      :: Adams-Bashforth-2 stabilizing weight used in CD scheme
+C     baseTime      :: model base time (time origin) = time @ iteration zero
+C     startTime     :: Starting time for this integration ( s ).
+C     endTime       :: Ending time for this integration ( s ).
+C     chkPtFreq     :: Frequency of rolling check pointing ( s ).
+C     pChkPtFreq    :: Frequency of permanent check pointing ( s ).
+C     dumpFreq      :: Frequency with which model state is written to
+C                      post-processing files ( s ).
+C     diagFreq      :: Frequency with which model writes diagnostic output
+C                      of intermediate quantities.
+C     afFacMom      :: Advection of momentum term multiplication factor
+C     vfFacMom      :: Momentum viscosity term    multiplication factor
+C     pfFacMom      :: Momentum pressure forcing  multiplication factor
+C     cfFacMom      :: Coriolis term              multiplication factor
+C     foFacMom      :: Momentum forcing           multiplication factor
+C     mtFacMom      :: Metric terms               multiplication factor
+C     cosPower      :: Power of cosine of latitude to multiply viscosity
+C     cAdjFreq      :: Frequency of convective adjustment
+C
+C     taveFreq      :: Frequency with which time-averaged model state
+C                      is written to post-processing files ( s ).
+C     tave_lastIter :: (for state variable only) fraction of the last time
+C                      step (of each taveFreq period) put in the time average.
+C                      (fraction for 1rst iter = 1 - tave_lastIter)
+C     tauThetaClimRelax :: Relaxation to climatology time scale ( s ).
+C     tauSaltClimRelax :: Relaxation to climatology time scale ( s ).
+C     latBandClimRelax :: latitude band where Relaxation to Clim. is applied,
+C                         i.e. where |yC| <= latBandClimRelax
+C     externForcingPeriod :: Is the period of which forcing varies (eg. 1 month)
+C     externForcingCycle :: Is the repeat time of the forcing (eg. 1 year)
+C                          (note: externForcingCycle must be an integer
+C                           number times externForcingPeriod)
+C     convertFW2Salt :: salinity, used to convert Fresh-Water Flux to Salt Flux
+C                       (use model surface (local) value if set to -1)
+C     temp_EvPrRn :: temperature of Rain & Evap.
+C     salt_EvPrRn :: salinity of Rain & Evap.
+C     temp_addMass :: temperature of addMass field
+C     salt_addMass :: salinity of addMass field
+C        (notes: a) tracer content of Rain/Evap only used if both
+C                     NonLin_FrSurf & useRealFreshWater are set.
+C                b) use model surface (local) value if set to UNSET_RL)
+C     hMixCriteria:: criteria for mixed-layer diagnostic
+C     dRhoSmall   :: parameter for mixed-layer diagnostic
+C     hMixSmooth  :: Smoothing parameter for mixed-layer diag
+C                    (default=0: no smoothing)
+C     ivdc_kappa  :: implicit vertical diffusivity for convection [m^2/s]
+C     sideDragFactor     :: side-drag scaling factor (used only if no_slip_sides)
+C                           (default=2: full drag ; =1: gives half-slip BC)
+C     bottomDragLinear    :: Linear    bottom-drag coefficient (units of [r]/s)
+C     bottomDragQuadratic :: Quadratic bottom-drag coefficient (units of [r]/m)
+C               (if using zcoordinate, units becomes linear: m/s, quadratic: [-])
+C     zRoughBot :: roughness length for quadratic bottom friction coefficient
+C                  (in m, typical values are order 0.01 m)
+C     smoothAbsFuncRange :: 1/2 of interval around zero, for which FORTRAN ABS
+C                           is to be replace by a smoother function
+C                           (affects myabs, mymin, mymax)
+C     nh_Am2        :: scales non-hydrostatic terms and changes internal scales
+C                      (i.e. allows convection at different Rayleigh numbers)
+C     tCylIn        :: Temperature of the cylinder inner boundary
+C     tCylOut       :: Temperature of the cylinder outer boundary
+C     phiEuler      :: Euler angle, rotation about original z-axis
+C     thetaEuler    :: Euler angle, rotation about new x-axis
+C     psiEuler      :: Euler angle, rotation about new z-axis
+      COMMON /PARM_R/ cg2dTargetResidual, cg2dTargetResWunit,
+     & cg2dpcOffDFac, cg3dTargetResidual, cg3dTargetResWunit,
+     & delR, delRc, xgOrigin, ygOrigin, rSphere, recip_rSphere,
+     & radius_fromHorizGrid, seaLev_Z, top_Pres, rSigmaBnd,
+     & deltaT, deltaTMom, dTtracerLev, deltaTFreeSurf, deltaTClock,
+     & abEps, alph_AB, beta_AB,
+     & f0, beta, fPrime, omega, rotationPeriod,
+     & viscFacAdj, viscAh, viscAhW, smag3D_coeff, smag3D_diffCoeff,
+     & viscAhMax, viscAhGrid, viscAhGridMax, viscAhGridMin,
+     & viscC2leith, viscC2leithD, viscC2LeithQG,
+     & viscC2smag, viscC4smag,
+     & viscAhD, viscAhZ, viscA4D, viscA4Z,
+     & viscA4, viscA4W, viscA4Max,
+     & viscA4Grid, viscA4GridMax, viscA4GridMin,
+     & viscAhReMax, viscA4ReMax,
+     & viscC4leith, viscC4leithD, viscArNr,
+     & diffKhT, diffK4T, diffKrNrT, diffKr4T,
+     & diffKhS, diffK4S, diffKrNrS, diffKr4S,
+     & diffKrBL79surf, diffKrBL79deep, diffKrBL79scl, diffKrBL79Ho,
+     & BL79LatVary,
+     & diffKrBLEQsurf, diffKrBLEQdeep, diffKrBLEQscl, diffKrBLEQHo,
+     & pCellMix_maxFac, pCellMix_delR, pCellMix_viscAr, pCellMix_diffKr,
+     & tauCD, rCD, epsAB_CD,
+     & freeSurfFac, implicSurfPress, implicDiv2DFlow, implicitNHPress,
+     & hFacMin, hFacMinDz, hFacInf, hFacSup,
+     & gravity, recip_gravity, gBaro,
+     & gravFacC, recip_gravFacC, gravFacF, recip_gravFacF,
+     & rhoNil, rhoConst, recip_rhoConst, rho1Ref,
+     & rhoFacC, recip_rhoFacC, rhoFacF, recip_rhoFacF, rhoConstFresh,
+     & thetaConst, tRef, sRef, rhoRef, dBdrRef,
+     & surf_pRef, pRef4EOS, phiRef,
+     & rVel2wUnit, wUnit2rVel, rUnit2z, z2rUnit, mass2rUnit, rUnit2mass,
+     & baseTime, startTime, endTime,
+     & chkPtFreq, pChkPtFreq, dumpFreq, adjDumpFreq,
+     & diagFreq, taveFreq, tave_lastIter, monitorFreq, adjMonitorFreq,
+     & afFacMom, vfFacMom, pfFacMom, cfFacMom, foFacMom, mtFacMom,
+     & cosPower, cAdjFreq,
+     & tauThetaClimRelax, tauSaltClimRelax, latBandClimRelax,
+     & externForcingCycle, externForcingPeriod,
+     & convertFW2Salt, temp_EvPrRn, salt_EvPrRn,
+     & temp_addMass, salt_addMass, hFacMinDr, hFacMinDp,
+     & ivdc_kappa, hMixCriteria, dRhoSmall, hMixSmooth,
+     & sideDragFactor, bottomDragLinear, bottomDragQuadratic,
+     & zRoughBot, nh_Am2, smoothAbsFuncRange, sIceLoadFac,
+     & tCylIn, tCylOut,
+     & phiEuler, thetaEuler, psiEuler
+
+      Real*8 cg2dTargetResidual
+      Real*8 cg2dTargetResWunit
+      Real*8 cg3dTargetResidual
+      Real*8 cg3dTargetResWunit
+      Real*8 cg2dpcOffDFac
+      Real*8 delR(Nr)
+      Real*8 delRc(Nr+1)
+      Real*8 xgOrigin
+      Real*8 ygOrigin
+      Real*8 rSphere
+      Real*8 recip_rSphere
+      Real*8 radius_fromHorizGrid
+      Real*8 seaLev_Z
+      Real*8 top_Pres
+      Real*8 rSigmaBnd
+      Real*8 deltaT
+      Real*8 deltaTClock
+      Real*8 deltaTMom
+      Real*8 dTtracerLev(Nr)
+      Real*8 deltaTFreeSurf
+      Real*8 abEps, alph_AB, beta_AB
+      Real*8 f0
+      Real*8 beta
+      Real*8 fPrime
+      Real*8 omega
+      Real*8 rotationPeriod
+      Real*8 freeSurfFac
+      Real*8 implicSurfPress
+      Real*8 implicDiv2DFlow
+      Real*8 implicitNHPress
+      Real*8 hFacMin
+      Real*8 hFacMinDz
+      Real*8 hFacMinDp
+      Real*8 hFacMinDr
+      Real*8 hFacInf
+      Real*8 hFacSup
+      Real*8 viscArNr(Nr)
+      Real*8 viscFacAdj
+      Real*8 viscAh
+      Real*8 viscAhW
+      Real*8 viscAhD
+      Real*8 viscAhZ
+      Real*8 smag3D_coeff, smag3D_diffCoeff
+      Real*8 viscAhMax
+      Real*8 viscAhReMax
+      Real*8 viscAhGrid, viscAhGridMax, viscAhGridMin
+      Real*8 viscC2leith
+      Real*8 viscC2leithD
+      Real*8 viscC2LeithQG
+      Real*8 viscC2smag
+      Real*8 viscA4
+      Real*8 viscA4W
+      Real*8 viscA4D
+      Real*8 viscA4Z
+      Real*8 viscA4Max
+      Real*8 viscA4ReMax
+      Real*8 viscA4Grid, viscA4GridMax, viscA4GridMin
+      Real*8 viscC4leith
+      Real*8 viscC4leithD
+      Real*8 viscC4smag
+      Real*8 diffKhT
+      Real*8 diffK4T
+      Real*8 diffKrNrT(Nr)
+      Real*8 diffKr4T(Nr)
+      Real*8 diffKhS
+      Real*8 diffK4S
+      Real*8 diffKrNrS(Nr)
+      Real*8 diffKr4S(Nr)
+      Real*8 diffKrBL79surf
+      Real*8 diffKrBL79deep
+      Real*8 diffKrBL79scl
+      Real*8 diffKrBL79Ho
+      Real*8 BL79LatVary
+      Real*8 diffKrBLEQsurf
+      Real*8 diffKrBLEQdeep
+      Real*8 diffKrBLEQscl
+      Real*8 diffKrBLEQHo
+      Real*8 pCellMix_maxFac
+      Real*8 pCellMix_delR
+      Real*8 pCellMix_viscAr(Nr)
+      Real*8 pCellMix_diffKr(Nr)
+      Real*8 tauCD, rCD, epsAB_CD
+      Real*8 gravity,       recip_gravity
+      Real*8 gBaro
+      Real*8 gravFacC(Nr),   recip_gravFacC(Nr)
+      Real*8 gravFacF(Nr+1), recip_gravFacF(Nr+1)
+      Real*8 rhoNil
+      Real*8 rhoConst,      recip_rhoConst
+      Real*8 rho1Ref(Nr)
+      Real*8 rhoFacC(Nr),   recip_rhoFacC(Nr)
+      Real*8 rhoFacF(Nr+1), recip_rhoFacF(Nr+1)
+      Real*8 rhoConstFresh
+      Real*8 thetaConst
+      Real*8 tRef(Nr)
+      Real*8 sRef(Nr)
+      Real*8 rhoRef(Nr)
+      Real*8 dBdrRef(Nr)
+      Real*8 surf_pRef, pRef4EOS(Nr)
+      Real*8 phiRef(2*Nr+1)
+      Real*8 rVel2wUnit(Nr+1), wUnit2rVel(Nr+1)
+      Real*8 rUnit2z(Nr), z2rUnit(Nr)
+      Real*8 mass2rUnit, rUnit2mass
+      Real*8 baseTime
+      Real*8 startTime
+      Real*8 endTime
+      Real*8 chkPtFreq
+      Real*8 pChkPtFreq
+      Real*8 dumpFreq
+      Real*8 adjDumpFreq
+      Real*8 diagFreq
+      Real*8 taveFreq
+      Real*8 tave_lastIter
+      Real*8 monitorFreq
+      Real*8 adjMonitorFreq
+      Real*8 afFacMom
+      Real*8 vfFacMom
+      Real*8 pfFacMom
+      Real*8 cfFacMom
+      Real*8 foFacMom
+      Real*8 mtFacMom
+      Real*8 cosPower
+      Real*8 cAdjFreq
+      Real*8 tauThetaClimRelax
+      Real*8 tauSaltClimRelax
+      Real*8 latBandClimRelax
+      Real*8 externForcingCycle
+      Real*8 externForcingPeriod
+      Real*8 convertFW2Salt
+      Real*8 temp_EvPrRn
+      Real*8 salt_EvPrRn
+      Real*8 temp_addMass
+      Real*8 salt_addMass
+      Real*8 ivdc_kappa
+      Real*8 hMixCriteria
+      Real*8 dRhoSmall
+      Real*8 hMixSmooth
+      Real*8 sideDragFactor
+      Real*8 bottomDragLinear
+      Real*8 bottomDragQuadratic
+      Real*8 zRoughBot
+      Real*8 smoothAbsFuncRange
+      Real*8 sIceLoadFac
+      Real*8 nh_Am2
+      Real*8 tCylIn, tCylOut
+      Real*8 phiEuler, thetaEuler, psiEuler
+
+C--   COMMON /PARM_A/ Thermodynamics constants ?
+      COMMON /PARM_A/ HeatCapacity_Cp
+      Real*8 HeatCapacity_Cp
+
+C--   COMMON /PARM_ATM/ Atmospheric physical parameters (Ideal Gas EOS, ...)
+C     celsius2K :: convert centigrade (Celsius) degree to Kelvin
+C     atm_Po    :: standard reference pressure
+C     atm_Cp    :: specific heat (Cp) of the (dry) air at constant pressure
+C     atm_Rd    :: gas constant for dry air
+C     atm_kappa :: kappa = R/Cp (R: constant of Ideal Gas EOS)
+C     atm_Rq    :: water vapour specific volume anomaly relative to dry air
+C                  (e.g. typical value = (29/18 -1) 10^-3 with q [g/kg])
+C     integr_GeoPot :: option to select the way we integrate the geopotential
+C                     (still a subject of discussions ...)
+C     selectFindRoSurf :: select the way surf. ref. pressure (=Ro_surf) is
+C             derived from the orography. Implemented: 0,1 (see INI_P_GROUND)
+      COMMON /PARM_ATM/
+     &            celsius2K,
+     &            atm_Cp, atm_Rd, atm_kappa, atm_Rq, atm_Po,
+     &            integr_GeoPot, selectFindRoSurf
+      Real*8 celsius2K
+      Real*8 atm_Po, atm_Cp, atm_Rd, atm_kappa, atm_Rq
+      INTEGER integr_GeoPot, selectFindRoSurf
+
+C---+----1----+----2----+----3----+----4----+----5----+----6----+----7-|--+----|
+C-- Logical flags for selecting packages
+      LOGICAL useGAD
+      LOGICAL useOBCS
+      LOGICAL useSHAP_FILT
+      LOGICAL useZONAL_FILT
+      LOGICAL useOPPS
+      LOGICAL usePP81
+      LOGICAL useKL10
+      LOGICAL useMY82
+      LOGICAL useGGL90
+      LOGICAL useKPP
+      LOGICAL useGMRedi
+      LOGICAL useDOWN_SLOPE
+      LOGICAL useBBL
+      LOGICAL useCAL
+      LOGICAL useEXF
+      LOGICAL useBulkForce
+      LOGICAL useEBM
+      LOGICAL useCheapAML
+      LOGICAL useAUTODIFF
+      LOGICAL useGrdchk
+      LOGICAL useSMOOTH
+      LOGICAL usePROFILES
+      LOGICAL useECCO
+      LOGICAL useCTRL
+      LOGICAL useSBO
+      LOGICAL useFLT
+      LOGICAL usePTRACERS
+      LOGICAL useGCHEM
+      LOGICAL useRBCS
+      LOGICAL useOffLine
+      LOGICAL useMATRIX
+      LOGICAL useFRAZIL
+      LOGICAL useSEAICE
+      LOGICAL useSALT_PLUME
+      LOGICAL useShelfIce
+      LOGICAL useSTIC
+      LOGICAL useStreamIce
+      LOGICAL useICEFRONT
+      LOGICAL useICEPLUME
+      LOGICAL useDOUBLEPLUME
+      LOGICAL useThSIce
+      LOGICAL useLand
+      LOGICAL useATM2d
+      LOGICAL useAIM
+      LOGICAL useAtm_Phys
+      LOGICAL uselanduseatm2d
+      LOGICAL useFizhi
+      LOGICAL useGridAlt
+      LOGICAL useDiagnostics
+      LOGICAL useREGRID
+      LOGICAL useLayers
+      LOGICAL useMNC
+      LOGICAL useRunClock
+      LOGICAL useEMBED_FILES
+      LOGICAL useMYPACKAGE
+      COMMON /PARM_PACKAGES/
+     &        useGAD, useOBCS, useSHAP_FILT, useZONAL_FILT,
+     &        useOPPS, usePP81, useKL10, useMY82, useGGL90, useKPP,
+     &        useGMRedi, useBBL, useDOWN_SLOPE,
+     &        useCAL, useEXF, useBulkForce, useEBM, useCheapAML,
+     &        useGrdchk, useSMOOTH, usePROFILES, useECCO, useCTRL,
+     &        useSBO, useFLT, useAUTODIFF,
+     &        usePTRACERS, useGCHEM, useRBCS, useOffLine, useMATRIX,
+     &        useFRAZIL, useSEAICE, useSALT_PLUME, useShelfIce, useSTIC,
+     &        useStreamIce, useICEFRONT, useICEPLUME, useDOUBLEPLUME, 
+     &        useThSIce, useLand,
+     &        useATM2d, useAIM, useAtm_Phys, useFizhi, useGridAlt,
+     &        useDiagnostics, useREGRID, useLayers, useMNC,
+     &        useRunClock, useEMBED_FILES,
+     &        useMYPACKAGE
+
+C---+----1----+----2----+----3----+----4----+----5----+----6----+----7-|--+----|
+
+C
+CBOP
+C    !ROUTINE: GRID.h
+C    !INTERFACE:
+C    include GRID.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | GRID.h
+C     | o Header file defining model grid.
+C     *==========================================================*
+C     | Model grid is defined for each process by reference to
+C     | the arrays set here.
+C     | Notes
+C     | =====
+C     | The standard MITgcm convention of westmost, southern most
+C     | and upper most having the (1,1,1) index is used here.
+C     | i.e.
+C     |----------------------------------------------------------
+C     | (1)  Plan view schematic of model grid (top layer i.e. )
+C     |      ================================= ( ocean surface )
+C     |                                        ( or top of     )
+C     |                                        ( atmosphere    )
+C     |      This diagram shows the location of the model
+C     |      prognostic variables on the model grid. The "T"
+C     |      location is used for all tracers. The figure also
+C     |      shows the southern most, western most indexing
+C     |      convention that is used for all model variables.
+C     |
+C     |
+C     |             V(i=1,                     V(i=Nx,
+C     |               j=Ny+1,                    j=Ny+1,
+C     |               k=1)                       k=1)
+C     |                /|\                       /|\  "PWX"
+C     |       |---------|------------------etc..  |---- *---
+C     |       |                     |                   *  |
+C     |"PWY"*******************************etc..  **********"PWY"
+C     |       |                     |                   *  |
+C     |       |                     |                   *  |
+C     |       |                     |                   *  |
+C     |U(i=1, ==>       x           |             x     *==>U
+C     |  j=Ny,|      T(i=1,         |          T(i=Nx,  *(i=Nx+1,
+C     |  k=1) |        j=Ny,        |            j=Ny,  *  |j=Ny,
+C     |       |        k=1)         |            k=1)   *  |k=1)
+C     |
+C     |       .                     .                      .
+C     |       .                     .                      .
+C     |       .                     .                      .
+C     |       e                     e                   *  e
+C     |       t                     t                   *  t
+C     |       c                     c                   *  c
+C     |       |                     |                   *  |
+C     |       |                     |                   *  |
+C     |U(i=1, ==>       x           |             x     *  |
+C     |  j=2, |      T(i=1,         |          T(i=Nx,  *  |
+C     |  k=1) |        j=2,         |            j=2,   *  |
+C     |       |        k=1)         |            k=1)   *  |
+C     |       |                     |                   *  |
+C     |       |        /|\          |            /|\    *  |
+C     |      -----------|------------------etc..  |-----*---
+C     |       |       V(i=1,        |           V(i=Nx, *  |
+C     |       |         j=2,        |             j=2,  *  |
+C     |       |         k=1)        |             k=1)  *  |
+C     |       |                     |                   *  |
+C     |U(i=1, ==>       x         ==>U(i=2,       x     *==>U
+C     |  j=1, |      T(i=1,         |  j=1,    T(i=Nx,  *(i=Nx+1,
+C     |  k=1) |        j=1,         |  k=1)      j=1,   *  |j=1,
+C     |       |        k=1)         |            k=1)   *  |k=1)
+C     |       |                     |                   *  |
+C     |       |        /|\          |            /|\    *  |
+C     |"SB"++>|---------|------------------etc..  |-----*---
+C     |      /+\      V(i=1,                    V(i=Nx, *
+C     |       +         j=1,                      j=1,  *
+C     |       +         k=1)                      k=1)  *
+C     |     "WB"                                      "PWX"
+C     |
+C     |   N, y increasing northwards
+C     |  /|\ j increasing northwards
+C     |   |
+C     |   |
+C     |   ======>E, x increasing eastwards
+C     |             i increasing eastwards
+C     |
+C     |    i: East-west index
+C     |    j: North-south index
+C     |    k: up-down index
+C     |    U: x-velocity (m/s)
+C     |    V: y-velocity (m/s)
+C     |    T: potential temperature (oC)
+C     | "SB": Southern boundary
+C     | "WB": Western boundary
+C     |"PWX": Periodic wrap around in X.
+C     |"PWY": Periodic wrap around in Y.
+C     |----------------------------------------------------------
+C     | (2) South elevation schematic of model grid
+C     |     =======================================
+C     |     This diagram shows the location of the model
+C     |     prognostic variables on the model grid. The "T"
+C     |     location is used for all tracers. The figure also
+C     |     shows the upper most, western most indexing
+C     |     convention that is used for all model variables.
+C     |
+C     |      "WB"
+C     |       +
+C     |       +
+C     |      \+/       /|\                       /|\       .
+C     |"UB"++>|-------- | -----------------etc..  | ----*---
+C     |       |    rVel(i=1,        |        rVel(i=Nx, *  |
+C     |       |         j=1,        |             j=1,  *  |
+C     |       |         k=1)        |             k=1)  *  |
+C     |       |                     |                   *  |
+C     |U(i=1, ==>       x         ==>U(i=2,       x     *==>U
+C     |  j=1, |      T(i=1,         |  j=1,    T(i=Nx,  *(i=Nx+1,
+C     |  k=1) |        j=1,         |  k=1)      j=1,   *  |j=1,
+C     |       |        k=1)         |            k=1)   *  |k=1)
+C     |       |                     |                   *  |
+C     |       |        /|\          |            /|\    *  |
+C     |       |-------- | -----------------etc..  | ----*---
+C     |       |    rVel(i=1,        |        rVel(i=Nx, *  |
+C     |       |         j=1,        |             j=1,  *  |
+C     |       |         k=2)        |             k=2)  *  |
+C     |
+C     |       .                     .                      .
+C     |       .                     .                      .
+C     |       .                     .                      .
+C     |       e                     e                   *  e
+C     |       t                     t                   *  t
+C     |       c                     c                   *  c
+C     |       |                     |                   *  |
+C     |       |                     |                   *  |
+C     |       |                     |                   *  |
+C     |       |                     |                   *  |
+C     |       |        /|\          |            /|\    *  |
+C     |       |-------- | -----------------etc..  | ----*---
+C     |       |    rVel(i=1,        |        rVel(i=Nx, *  |
+C     |       |         j=1,        |             j=1,  *  |
+C     |       |         k=Nr)       |             k=Nr) *  |
+C     |U(i=1, ==>       x         ==>U(i=2,       x     *==>U
+C     |  j=1, |      T(i=1,         |  j=1,    T(i=Nx,  *(i=Nx+1,
+C     |  k=Nr)|        j=1,         |  k=Nr)     j=1,   *  |j=1,
+C     |       |        k=Nr)        |            k=Nr)  *  |k=Nr)
+C     |       |                     |                   *  |
+C     |"LB"++>==============================================
+C     |                                               "PWX"
+C     |
+C     | Up   increasing upwards.
+C     |/|\                                                       .
+C     | |
+C     | |
+C     | =====> E  i increasing eastwards
+C     | |         x increasing eastwards
+C     | |
+C     |\|/
+C     | Down,k increasing downwards.
+C     |
+C     | Note: r => height (m) => r increases upwards
+C     |       r => pressure (Pa) => r increases downwards
+C     |
+C     |
+C     |    i: East-west index
+C     |    j: North-south index
+C     |    k: up-down index
+C     |    U: x-velocity (m/s)
+C     | rVel: z-velocity ( units of r )
+C     |       The vertical velocity variable rVel is in units of
+C     |       "r" the vertical coordinate. r in m will give
+C     |       rVel m/s. r in Pa will give rVel Pa/s.
+C     |    T: potential temperature (oC)
+C     | "UB": Upper boundary.
+C     | "LB": Lower boundary (always solid - therefore om|w == 0)
+C     | "WB": Western boundary
+C     |"PWX": Periodic wrap around in X.
+C     |----------------------------------------------------------
+C     | (3) Views showing nomenclature and indexing
+C     |     for grid descriptor variables.
+C     |
+C     |      Fig 3a. shows the orientation, indexing and
+C     |      notation for the grid spacing terms used internally
+C     |      for the evaluation of gradient and averaging terms.
+C     |      These varaibles are set based on the model input
+C     |      parameters which define the model grid in terms of
+C     |      spacing in X, Y and Z.
+C     |
+C     |      Fig 3b. shows the orientation, indexing and
+C     |      notation for the variables that are used to define
+C     |      the model grid. These varaibles are set directly
+C     |      from the model input.
+C     |
+C     | Figure 3a
+C     | =========
+C     |       |------------------------------------
+C     |       |                       |
+C     |"PWY"********************************* etc...
+C     |       |                       |
+C     |       |                       |
+C     |       |                       |
+C     |       |                       |
+C     |       |                       |
+C     |       |                       |
+C     |       |                       |
+C     |
+C     |       .                       .
+C     |       .                       .
+C     |       .                       .
+C     |       e                       e
+C     |       t                       t
+C     |       c                       c
+C     |       |-----------v-----------|-----------v----------|-
+C     |       |                       |                      |
+C     |       |                       |                      |
+C     |       |                       |                      |
+C     |       |                       |                      |
+C     |       |                       |                      |
+C     |       u<--dxF(i=1,j=2,k=1)--->u           t          |
+C     |       |/|\       /|\          |                      |
+C     |       | |         |           |                      |
+C     |       | |         |           |                      |
+C     |       | |         |           |                      |
+C     |       |dyU(i=1,  dyC(i=1,     |                      |
+C     | ---  ---|--j=2,---|--j=2,-----------------v----------|-
+C     | /|\   | |  k=1)   |  k=1)     |          /|\         |
+C     |  |    | |         |           |          dyF(i=2,    |
+C     |  |    | |         |           |           |  j=1,    |
+C     |dyG(   |\|/       \|/          |           |  k=1)    |
+C     |   i=1,u---        t<---dxC(i=2,j=1,k=1)-->t          |
+C     |   j=1,|                       |           |          |
+C     |   k=1)|                       |           |          |
+C     |  |    |                       |           |          |
+C     |  |    |                       |           |          |
+C     | \|/   |           |<---dxV(i=2,j=1,k=1)--\|/         |
+C     |"SB"++>|___________v___________|___________v__________|_
+C     |       <--dxG(i=1,j=1,k=1)----->
+C     |      /+\                                              .
+C     |       +
+C     |       +
+C     |     "WB"
+C     |
+C     |   N, y increasing northwards
+C     |  /|\ j increasing northwards
+C     |   |
+C     |   |
+C     |   ======>E, x increasing eastwards
+C     |             i increasing eastwards
+C     |
+C     |    i: East-west index
+C     |    j: North-south index
+C     |    k: up-down index
+C     |    u: x-velocity point
+C     |    V: y-velocity point
+C     |    t: tracer point
+C     | "SB": Southern boundary
+C     | "WB": Western boundary
+C     |"PWX": Periodic wrap around in X.
+C     |"PWY": Periodic wrap around in Y.
+C     |
+C     | Figure 3b
+C     | =========
+C     |
+C     |       .                       .
+C     |       .                       .
+C     |       .                       .
+C     |       e                       e
+C     |       t                       t
+C     |       c                       c
+C     |       |-----------v-----------|-----------v--etc...
+C     |       |                       |
+C     |       |                       |
+C     |       |                       |
+C     |       |                       |
+C     |       |                       |
+C     |       u<--delX(i=1)---------->u           t
+C     |       |                       |
+C     |       |                       |
+C     |       |                       |
+C     |       |                       |
+C     |       |                       |
+C     |       |-----------v-----------------------v--etc...
+C     |       |          /|\          |
+C     |       |           |           |
+C     |       |           |           |
+C     |       |           |           |
+C     |       u        delY(j=1)      |           t
+C     |       |           |           |
+C     |       |           |           |
+C     |       |           |           |
+C     |       |           |           |
+C     |       |          \|/          |
+C     |"SB"++>|___________v___________|___________v__etc...
+C     |      /+\                                                 .
+C     |       +
+C     |       +
+C     |     "WB"
+C     |
+C     *==========================================================*
+C     \ev
+CEOP
+
+C     Macros that override/modify standard definitions
+
+C
+CBOP
+C    !ROUTINE: GRID_MACROS.h
+C    !INTERFACE:
+C    include GRID_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | GRID_MACROS.h
+C     *==========================================================*
+C     | These macros are used to substitute definitions for
+C     | GRID.h variables for particular configurations.
+C     | In setting these variables the following convention
+C     | applies.
+C     | undef  phi_CONST   - Indicates the variable phi is fixed
+C     |                      in X, Y and Z.
+C     | undef  phi_FX      - Indicates the variable phi only
+C     |                      varies in X (i.e.not in X or Z).
+C     | undef  phi_FY      - Indicates the variable phi only
+C     |                      varies in Y (i.e.not in X or Z).
+C     | undef  phi_FXY     - Indicates the variable phi only
+C     |                      varies in X and Y ( i.e. not Z).
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+C
+CBOP
+C    !ROUTINE: DXC_MACROS.h
+C    !INTERFACE:
+C    include DXC_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | DXC_MACROS.h                                              
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: DXF_MACROS.h
+C    !INTERFACE:
+C    include DXF_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | DXF_MACROS.h                                              
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: DXG_MACROS.h
+C    !INTERFACE:
+C    include DXG_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | DXG_MACROS.h                                              
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: DXV_MACROS.h
+C    !INTERFACE:
+C    include DXV_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | DXV_MACROS.h                                              
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: DYC_MACROS.h
+C    !INTERFACE:
+C    include DYC_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | DYC_MACROS.h                                              
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: DYF_MACROS.h
+C    !INTERFACE:
+C    include DYF_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | DYF_MACROS.h                                              
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: DYG_MACROS.h
+C    !INTERFACE:
+C    include DYG_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | DYG_MACROS.h                                              
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: DYU_MACROS.h
+C    !INTERFACE:
+C    include DYU_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | DYU_MACROS.h                                              
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: HFACC_MACROS.h
+C    !INTERFACE:
+C    include HFACC_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | HFACC_MACROS.h                                            
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: HFACS_MACROS.h
+C    !INTERFACE:
+C    include HFACS_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | HFACS_MACROS.h                                            
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: HFACW_MACROS.h
+C    !INTERFACE:
+C    include HFACW_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | HFACW_MACROS.h                                            
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: RECIP_DXC_MACROS.h
+C    !INTERFACE:
+C    include RECIP_DXC_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | RECIP_DXC_MACROS.h                                        
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: RECIP_DXF_MACROS.h
+C    !INTERFACE:
+C    include RECIP_DXF_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | RECIP_DXF_MACROS.h                                        
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: RECIP_DXG_MACROS.h
+C    !INTERFACE:
+C    include RECIP_DXG_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | RECIP_DXG_MACROS.h                                        
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: RECIP_DXV_MACROS.h
+C    !INTERFACE:
+C    include RECIP_DXV_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | RECIP_DXV_MACROS.h                                        
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: RECIP_DYC_MACROS.h
+C    !INTERFACE:
+C    include RECIP_DYC_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | RECIP_DYC_MACROS.h                                        
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: RECIP_DYF_MACROS.h
+C    !INTERFACE:
+C    include RECIP_DYF_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | RECIP_DYF_MACROS.h                                        
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: RECIP_DYG_MACROS.h
+C    !INTERFACE:
+C    include RECIP_DYG_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | RECIP_DYG_MACROS.h                                        
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: RECIP_DYU_MACROS.h
+C    !INTERFACE:
+C    include RECIP_DYU_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | RECIP_DYU_MACROS.h                                        
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: RECIP_HFACC_MACROS.h
+C    !INTERFACE:
+C    include RECIP_HFACC_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | RECIP_HFACC_MACROS.h                                      
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: RECIP_HFACS_MACROS.h
+C    !INTERFACE:
+C    include RECIP_HFACS_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | RECIP_HFACS_MACROS.h                                      
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: RECIP_HFACW_MACROS.h
+C    !INTERFACE:
+C    include RECIP_HFACW_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | RECIP_HFACW_MACROS.h                                      
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: XC_MACROS.h
+C    !INTERFACE:
+C    include XC_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | XC_MACROS.h                                               
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: YC_MACROS.h
+C    !INTERFACE:
+C    include YC_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | YC_MACROS.h                                               
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: RA_MACROS.h
+C    !INTERFACE:
+C    include RA_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | RA_MACROS.h                                               
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: RAW_MACROS.h
+C    !INTERFACE:
+C    include RAW_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | RAW_MACROS.h                                              
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: RAS_MACROS.h
+C    !INTERFACE:
+C    include RAS_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | RAS_MACROS.h                                              
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: MASKW_MACROS.h
+C    !INTERFACE:
+C    include MASKW_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | MASKW_MACROS.h                                            
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: MASKS_MACROS.h
+C    !INTERFACE:
+C    include MASKS_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | MASKS_MACROS.h                                            
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: TANPHIATU_MACROS.h
+C    !INTERFACE:
+C    include TANPHIATU_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | TANPHIATU_MACROS.h                                        
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: TANPHIATV_MACROS.h
+C    !INTERFACE:
+C    include TANPHIATV_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | TANPHIATV_MACROS.h                                        
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+
+C
+CBOP
+C    !ROUTINE: FCORI_MACROS.h
+C    !INTERFACE:
+C    include FCORI_MACROS.h
+C    !DESCRIPTION: \bv
+C     *==========================================================*
+C     | FCORI_MACROS.h                                            
+C     *==========================================================*
+C     | These macros are used to reduce memory requirement and/or 
+C     | memory references when variables are fixed along a given  
+C     | axis or axes.                                             
+C     *==========================================================*
+C     \ev
+CEOP
+
+
+
+
+
+
+
+
+
+C--   COMMON /GRID_RL/ RL valued grid defining variables.
+C     deepFacC  :: deep-model grid factor (fct of vertical only) for dx,dy
+C     deepFacF     at level-center (deepFacC)  and level interface (deepFacF)
+C     deepFac2C :: deep-model grid factor (fct of vertical only) for area dx*dy
+C     deepFac2F    at level-center (deepFac2C) and level interface (deepFac2F)
+C     gravitySign :: indicates the direction of gravity relative to R direction
+C                   (= -1 for R=Z (Z increases upward, -gravity direction  )
+C                   (= +1 for R=P (P increases downward, +gravity direction)
+C     rkSign     :: Vertical coordinate to vertical index orientation.
+C                   ( +1 same orientation, -1 opposite orientation )
+C     globalArea :: Domain Integrated horizontal Area [m2]
+      COMMON /GRID_RL/
+     &  cosFacU, cosFacV, sqCosFacU, sqCosFacV,
+     &  deepFacC, deepFac2C, recip_deepFacC, recip_deepFac2C,
+     &  deepFacF, deepFac2F, recip_deepFacF, recip_deepFac2F,
+     &  gravitySign, rkSign, globalArea
+      Real*8 cosFacU        (1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 cosFacV        (1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 sqCosFacU      (1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 sqCosFacV      (1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 deepFacC       (Nr)
+      Real*8 deepFac2C      (Nr)
+      Real*8 deepFacF       (Nr+1)
+      Real*8 deepFac2F      (Nr+1)
+      Real*8 recip_deepFacC (Nr)
+      Real*8 recip_deepFac2C(Nr)
+      Real*8 recip_deepFacF (Nr+1)
+      Real*8 recip_deepFac2F(Nr+1)
+      Real*8 gravitySign
+      Real*8 rkSign
+      Real*8 globalArea
+
+C--   COMMON /GRID_RS/ RS valued grid defining variables.
+C     dxC     :: Cell center separation in X across western cell wall (m)
+C     dxG     :: Cell face separation in X along southern cell wall (m)
+C     dxF     :: Cell face separation in X thru cell center (m)
+C     dxV     :: V-point separation in X across south-west corner of cell (m)
+C     dyC     :: Cell center separation in Y across southern cell wall (m)
+C     dyG     :: Cell face separation in Y along western cell wall (m)
+C     dyF     :: Cell face separation in Y thru cell center (m)
+C     dyU     :: U-point separation in Y across south-west corner of cell (m)
+C     drC     :: Cell center separation along Z axis ( units of r ).
+C     drF     :: Cell face separation along Z axis ( units of r ).
+C     R_low   :: base of fluid in r_unit (Depth(m) / Pressure(Pa) at top Atmos.)
+C     rLowW   :: base of fluid column in r_unit at Western  edge location.
+C     rLowS   :: base of fluid column in r_unit at Southern edge location.
+C     Ro_surf :: surface reference (at rest) position, r_unit.
+C     rSurfW  :: surface reference position at Western  edge location [r_unit].
+C     rSurfS  :: surface reference position at Southern edge location [r_unit].
+C     hFac    :: Fraction of cell in vertical which is open i.e how
+C              "lopped" a cell is (dimensionless scale factor).
+C              Note: The code needs terms like MIN(hFac,hFac(I-1))
+C                    On some platforms it may be better to precompute
+C                    hFacW, hFacS, ... here than do MIN on the fly.
+C     maskInC :: Cell Center 2-D Interior mask (i.e., zero beyond OB)
+C     maskInW :: West  face 2-D Interior mask (i.e., zero on and beyond OB)
+C     maskInS :: South face 2-D Interior mask (i.e., zero on and beyond OB)
+C     maskC   :: cell Center land mask
+C     maskW   :: West face land mask
+C     maskS   :: South face land mask
+C     recip_dxC   :: Reciprocal of dxC
+C     recip_dxG   :: Reciprocal of dxG
+C     recip_dxF   :: Reciprocal of dxF
+C     recip_dxV   :: Reciprocal of dxV
+C     recip_dyC   :: Reciprocal of dxC
+C     recip_dyG   :: Reciprocal of dyG
+C     recip_dyF   :: Reciprocal of dyF
+C     recip_dyU   :: Reciprocal of dyU
+C     recip_drC   :: Reciprocal of drC
+C     recip_drF   :: Reciprocal of drF
+C     recip_Rcol  :: Inverse of cell center column thickness (1/r_unit)
+C     recip_hFacC :: Inverse of cell open-depth f[X,Y,Z] ( dimensionless ).
+C     recip_hFacW    rhFacC center, rhFacW west, rhFacS south.
+C     recip_hFacS   Note: This is precomputed here because it involves division.
+C     xC     :: X-coordinate of cell center f[X,Y]. The units of xc, yc
+C               depend on the grid. They are not used in differencing or
+C               averaging but are just a convient quantity for I/O,
+C               diagnostics etc.. As such xc is in m for cartesian
+C               coordinates but degrees for spherical polar.
+C     yC     :: Y-coordinate of center of cell f[X,Y].
+C     yG     :: Y-coordinate of corner of cell (c-grid vorticity point) f[X,Y].
+C     rA     :: R-face are f[X,Y] ( m^2 ).
+C               Note: In a cartesian framework rA is simply dx*dy,
+C                   however we use rA to allow for non-globally
+C                   orthogonal coordinate frames (with appropriate
+C                   metric terms).
+C     rC     :: R-coordinate of center of cell f[Z] (units of r).
+C     rF     :: R-coordinate of face of cell f[Z] (units of r).
+C - *HybSigm* - :: Hybrid-Sigma vert. Coord coefficients
+C     aHybSigmF    at level-interface (*HybSigmF) and level-center (*HybSigmC)
+C     aHybSigmC    aHybSigm* = constant r part, bHybSigm* = sigma part, such as
+C     bHybSigmF    r(ij,k,t) = rLow(ij) + aHybSigm(k)*[rF(1)-rF(Nr+1)]
+C     bHybSigmC              + bHybSigm(k)*[eta(ij,t)+Ro_surf(ij) - rLow(ij)]
+C     dAHybSigF :: vertical increment of Hybrid-Sigma coeff.: constant r part,
+C     dAHybSigC    between interface (dAHybSigF) and between center (dAHybSigC)
+C     dBHybSigF :: vertical increment of Hybrid-Sigma coefficient: sigma part,
+C     dBHybSigC    between interface (dBHybSigF) and between center (dBHybSigC)
+C     tanPhiAtU :: tan of the latitude at U point. Used for spherical polar
+C                  metric term in U equation.
+C     tanPhiAtV :: tan of the latitude at V point. Used for spherical polar
+C                  metric term in V equation.
+C     angleCosC :: cosine of grid orientation angle relative to Geographic
+C direction at cell center: alpha=(Eastward_dir,grid_uVel_dir)=(North_d,vVel_d)
+C     angleSinC :: sine   of grid orientation angle relative to Geographic
+C direction at cell center: alpha=(Eastward_dir,grid_uVel_dir)=(North_d,vVel_d)
+C     u2zonDir  :: cosine of grid orientation angle at U point location
+C     v2zonDir  :: minus sine of  orientation angle at V point location
+C     fCori     :: Coriolis parameter at grid Center point
+C     fCoriG    :: Coriolis parameter at grid Corner point
+C     fCoriCos  :: Coriolis Cos(phi) parameter at grid Center point (for NH)
+
+      COMMON /GRID_RS/
+     &  dxC,dxF,dxG,dxV,dyC,dyF,dyG,dyU,
+     &  rLowW, rLowS,
+     &  Ro_surf, rSurfW, rSurfS,
+     &  recip_dxC,recip_dxF,recip_dxG,recip_dxV,
+     &  recip_dyC,recip_dyF,recip_dyG,recip_dyU,
+     &  xC,yC,rA,rAw,rAs,rAz,xG,yG,
+     &  maskInC, maskInW, maskInS,
+     &  maskC, maskW, maskS,
+     &  recip_rA,recip_rAw,recip_rAs,recip_rAz,
+     &  drC, drF, recip_drC, recip_drF, rC, rF,
+     &  aHybSigmF, bHybSigmF, aHybSigmC, bHybSigmC,
+     &  dAHybSigF, dBHybSigF, dBHybSigC, dAHybSigC,
+     &  tanPhiAtU, tanPhiAtV,
+     &  angleCosC, angleSinC, u2zonDir, v2zonDir,
+     &  fCori, fCoriG, fCoriCos
+      Real*8 dxC            (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 dxF            (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 dxG            (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 dxV            (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 dyC            (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 dyF            (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 dyG            (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 dyU            (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 rLowW          (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 rLowS          (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 Ro_surf        (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 rSurfW         (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 rSurfS         (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 recip_dxC      (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 recip_dxF      (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 recip_dxG      (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 recip_dxV      (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 recip_dyC      (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 recip_dyF      (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 recip_dyG      (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 recip_dyU      (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 xC             (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 xG             (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 yC             (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 yG             (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 rA             (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 rAw            (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 rAs            (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 rAz            (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 recip_rA       (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 recip_rAw      (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 recip_rAs      (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 recip_rAz      (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 maskInC        (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 maskInW        (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 maskInS        (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 maskC          (1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+      Real*8 maskW          (1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+      Real*8 maskS          (1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+      Real*8 drC            (Nr+1)
+      Real*8 drF            (Nr)
+      Real*8 recip_drC      (Nr+1)
+      Real*8 recip_drF      (Nr)
+      Real*8 rC             (Nr)
+      Real*8 rF             (Nr+1)
+      Real*8 aHybSigmF      (Nr+1)
+      Real*8 bHybSigmF      (Nr+1)
+      Real*8 aHybSigmC      (Nr)
+      Real*8 bHybSigmC      (Nr)
+      Real*8 dAHybSigF      (Nr)
+      Real*8 dBHybSigF      (Nr)
+      Real*8 dBHybSigC      (Nr+1)
+      Real*8 dAHybSigC      (Nr+1)
+      Real*8 tanPhiAtU      (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 tanPhiAtV      (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 angleCosC      (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 angleSinC      (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 u2zonDir       (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 v2zonDir       (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 fCori          (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 fCoriG         (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 fCoriCos       (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+
+C--   COMMON /GRID_VAR_RS/ potentially time-dependent or active RS
+C     valued grid defining variables. These grid defining variables are
+C     time-dependent when using a non-linear free surface, or they are
+C     active in an AD sense when using depth as a control parameter, or
+C     both.
+      COMMON /GRID_VAR_RS/
+     &  hFacC, hFacW, hFacS,
+     &  recip_hFacC,recip_hFacW,recip_hFacS,
+     &  R_low, recip_Rcol
+      Real*8 hFacC          (1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+      Real*8 hFacW          (1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+      Real*8 hFacS          (1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+      Real*8 recip_hFacC    (1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+      Real*8 recip_hFacW    (1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+      Real*8 recip_hFacS    (1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+      Real*8 R_low          (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 recip_Rcol     (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+
+
+
+C--   COMMON /GRID_I/ INTEGER valued grid defining variables.
+C     kSurfC  :: vertical index of the surface tracer cell
+C     kSurfW  :: vertical index of the surface U point
+C     kSurfS  :: vertical index of the surface V point
+C     kLowC   :: index of the r-lowest "wet cell" (2D)
+C IMPORTANT: kLowC = 0 and kSurfC,W,S = Nr+1 (or =Nr+2 on a thin-wall)
+C            where the fluid column is empty (continent)
+      COMMON /GRID_I/
+     &  kSurfC, kSurfW, kSurfS,
+     &  kLowC
+      INTEGER kSurfC(1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      INTEGER kSurfW(1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      INTEGER kSurfS(1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      INTEGER kLowC (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+
+C---+----1----+----2----+----3----+----4----+----5----+----6----+----7-|--+----|
+
+CBOP
+C     !ROUTINE: DYNVARS.h
+C     !INTERFACE:
+C     include "DYNVARS.h"
+C     !DESCRIPTION:
+C     \bv
+C     *==========================================================*
+C     | DYNVARS.h
+C     | o Dynamical model variables (common block DYNVARS_R)
+C     *==========================================================*
+C     | The value and two levels of time tendency are held for
+C     | each prognostic variable.
+C     *==========================================================*
+C     \ev
+CEOP
+
+C     State Variables:
+C     etaN  :: free-surface r-anomaly (r unit) at current time level
+C     uVel  :: zonal velocity (m/s, i=1 held at western face)
+C     vVel  :: meridional velocity (m/s, j=1 held at southern face)
+C     theta :: potential temperature (oC, held at pressure/tracer point)
+C     salt  :: salinity (g/kg, held at pressure/tracer point; note that
+C              salinity is either a conductivity ratio or, if using TEOS10,
+C              a mass ratio;here we assume it is a mass ratio even though
+C              it is only correct for TEOS10)
+C     gX, gxNm1 :: Time tendencies at current and previous time levels.
+C     etaH  :: surface r-anomaly, advanced in time consistently
+C              with 2.D flow divergence (Exact-Conservation):
+C                etaH^n+1 = etaH^n - delta_t*Div.(H^n U^n+1)
+C  note: a) used with "exactConserv", necessary for Non-Lin free-surf and mixed
+C           forward/backward free-surf time stepping (e.g., Crank-Nickelson)
+C        b) same as etaN but not necessarily at the same time, e.g.:
+C           implicDiv2DFlow=1 => etaH=etaN ; =0 => etaH=etaN^(n-1);
+
+
+      COMMON /DYNVARS_R/
+     &                   etaN,
+     &                   uVel,vVel,wVel,theta,salt,
+     &                   gU,   gV,
+     &                   guNm1,gvNm1,gtNm1,gsNm1
+
+      Real*8  etaN  (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8  uVel (1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+      Real*8  vVel (1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+      Real*8  wVel (1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+      Real*8  theta(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+      Real*8  salt (1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+      Real*8  gU(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+      Real*8  gV(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+
+      Real*8  guNm1(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+      Real*8  gvNm1(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+      Real*8  gtNm1(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+      Real*8  gsNm1(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+
+
+
+
+      COMMON /DYNVARS_R_2/
+     &                   etaH
+      Real*8  etaH  (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+
+
+
+
+
+C   The following blocks containing requires anomaly fields of control vars
+C   and related to Options:
+C   ALLOW_KAPGM_CONTROL , ALLOW_KAPREDI_CONTROL and ALLOW_BOTTOMDRAG_CONTROL
+C   have been moved to header file "CTRL_FIELDS.h"
+
+
+
+C     Diagnostic Variables:
+C     rhoInSitu    :: In-Situ density anomaly [kg/m^3] at cell center level.
+C     totPhiHyd    :: total hydrostatic Potential (anomaly, for now),
+C                     at cell center level ; includes surface contribution.
+C                     (for diagnostic + used in Z-coord with EOS_funct_P)
+C     phiHydLow    :: Phi-Hydrostatic at r-lower boundary
+C                     (bottom in z-coordinates, top in p-coordinates)
+C     hMixLayer    :: Mixed layer depth [m]
+C                     (for diagnostic + used GMRedi "fm07")
+C     IVDConvCount :: Impl.Vert.Diffusion convection counter:
+C                     = 0 (not convecting) or 1 (convecting)
+      COMMON /DYNVARS_DIAG/
+     &                rhoInSitu,
+     &                totPhiHyd, phiHydLow,
+     &                hMixLayer, IVDConvCount
+      Real*8  rhoInSitu(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+      Real*8  totPhiHyd(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+      Real*8  phiHydLow(1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8  hMixLayer(1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8  IVDConvCount(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr,nSx,nSy)
+
+
+
+
+
+
+
+
+
+
+
+C     *==========================================================*
+C     | DOUBLEPLUME_OPTIONS.h
+C     | o CPP options file for ICEFRONT package.
+C     *==========================================================*
+C     | Use this file for selecting options within the ICEFRONT
+C     | package.
+C     *==========================================================*
+
+
+
+
+
+
+
+C Header file pkg/DOUBLEPLUME
+
+      COMMON /DOUBLEPLUME_INTEGERS/
+     &       iceDepthK,
+     &       runoffLocation, plumeInputLayer
+
+      INTEGER iceDepthK
+      INTEGER runoffLocation  (100,2)
+      INTEGER plumeInputLayer (100)
+
+      COMMON /DOUBLEPLUME_LOGICALS/
+     &      usePlumeDiagnostics,
+     &      dispersePlumeOutput,
+     &      useSheetPlume,
+     &      useConePlume,
+     &      useDetachPlume,
+     &      conserveMass,
+     &      useInputPtracers
+      LOGICAL usePlumeDiagnostics
+      LOGICAL dispersePlumeOutput
+      LOGICAL useSheetPlume
+      LOGICAL useConePlume
+      LOGICAL useDetachPlume
+      LOGICAL conserveMass
+      LOGICAL useInputPtracers
+
+      COMMON /DOUBLEPLUME_FIELDS/
+     &     runoffVel, runoffVel0, runoffVel1,
+     &     runoffRad, runoffRad0, runoffRad1,
+     &     plumeMask, 
+     &     HeatFlux3D, FwFlux3D,
+     &     QiProf3D, MiProf3D,
+     &     HiProf3D, BiProf3D,
+     &     mProf3D, mProfAv3D,
+     &     QiProf3DLocal, MiProf3DLocal,
+     &     HiProf3DLocal, BiProf3DLocal,
+     &     mProf3DLocal, mProfAv3DLocal,
+     &     temp_addMass3D, salt_addMass3D,
+     &     volFluxDiff3D,
+     &     Qin
+      Real*8 runoffVel  (1-Olx:sNx+Olx,1-Oly:sNy+Oly,nSx,nSy)
+      Real*8 runoffVel0 (1-Olx:sNx+Olx,1-Oly:sNy+Oly,nSx,nSy)
+      Real*8 runoffVel1 (1-Olx:sNx+Olx,1-Oly:sNy+Oly,nSx,nSy)
+      Real*8 runoffRad  (1-Olx:sNx+Olx,1-Oly:sNy+Oly,nSx,nSy)
+      Real*8 runoffRad0 (1-Olx:sNx+Olx,1-Oly:sNy+Oly,nSx,nSy)
+      Real*8 runoffRad1 (1-Olx:sNx+Olx,1-Oly:sNy+Oly,nSx,nSy)
+      Real*8 plumeMask  (1-Olx:sNx+Olx,1-Oly:sNy+Oly,nSx,nSy)
+      Real*8 HeatFlux3D  (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 FwFlux3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 QiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 MiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 HiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 BiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 mProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 mProfAv3D       (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 temp_addMass3D  (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 salt_addMass3D  (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 volFluxDiff3D   (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 QiProf3DLocal    (sNx,sNy,Nr)
+      Real*8 MiProf3DLocal    (sNx,sNy,Nr)
+      Real*8 HiProf3DLocal    (sNx,sNy,Nr)
+      Real*8 BiProf3DLocal    (sNx,sNy,Nr)
+      Real*8 mProf3DLocal    (sNx,sNy,Nr)
+      Real*8 mProfAv3DLocal       (sNx,sNy,Nr)
+      Real*8 Qin (100)
+
+      COMMON /DOUBLEPLUME_FIELDS_PROFILES/
+     &     saProf, taProf, ptProf, prProf, uProf, vProf,
+     &     QiProf, MiProf, HiProf, BiProf,
+     &     uProfPlume, mProfPlume, mProfAv, mProf, zProf, zProfAbs,
+     &     volFLux, volFluxDiff,
+     &     FwFlux, HeatFlux,
+     &     delta_z, aProf, mIntProf
+      Real*8 saProf  (Nr)
+      Real*8 taProf  (Nr)
+      Real*8 ptProf (Nr)
+      Real*8 prProf (Nr)
+      Real*8 uProf  (Nr)
+      Real*8 vProf  (Nr)
+      Real*8 QiProf (Nr+1)
+      Real*8 MiProf (Nr+1)
+      Real*8 HiProf (Nr+1)
+      Real*8 BiProf (Nr+1)
+      Real*8 aProf (Nr+1)   ! integrated area of plume from bottom
+      Real*8 mIntProf (Nr+1)   ! integrated melt of plume from bottom
+      Real*8 uProfPlume (Nr)     
+      Real*8 mProfPlume (Nr)
+      Real*8 mProfAv    (Nr)
+      Real*8 mProf      (Nr)
+      Real*8 zProf      (Nr+1)
+      Real*8 zProfAbs   (Nr+1)
+      Real*8 volFlux     (Nr+1)
+      Real*8 volFluxDiff (Nr)
+      Real*8 HeatFlux(Nr)
+      Real*8 FwFlux(Nr)
+      Real*8 delta_z(Nr)
+      
+
+
+      COMMON /DOUBLEPLUME_PARM_R/
+     &     E_0,
+     &     Q_sg, T_sg, S_sg, r_sg, w_sg,
+     &     theta_sg,
+     &     delta_x, delta_y,
+     &     RTOL, ATOL,
+     &     iceTemp,
+     &     outputThickness,
+     &     kap, rho_ref, g, c_w, c_i, L,
+     &     gam, lambda1, lambda2, lambda3,
+     &     GamT, GamS, Cd,
+     &     sOutPlume, tOutPlume,
+     &     iceDepth,
+     &     backgroundVel,
+     &     ptracerfluxSum,
+     &     maxDepth
+      Real*8 E_0
+      Real*8 Q_sg
+      Real*8 T_sg
+      Real*8 S_sg
+      Real*8 w_sg
+      Real*8 r_sg
+      Real*8 theta_sg
+      Real*8 delta_x
+      Real*8 delta_y
+      Real*8 RTOL
+      Real*8 ATOL
+      Real*8 iceTemp
+      Real*8 outputThickness
+      Real*8 kap
+      Real*8 rho_ref
+      Real*8 g
+      Real*8 c_w
+      Real*8 c_i
+      Real*8 L
+      Real*8 gam
+      Real*8 lambda1
+      Real*8 lambda2
+      Real*8 lambda3
+      Real*8 sOutPlume
+      Real*8 tOutPlume
+      Real*8 gamS
+      Real*8 gamT
+      Real*8 cd
+      Real*8 iceDepth
+      Real*8 backgroundVel
+      Real*8 ptracerFluxSum
+      Real*8 maxDepth
+
+      COMMON /DOUBLEPLUME_FILES/
+     &	    runoffVelfile,
+     &	    runoffRadfile,
+     &      plumeMaskFile
+C Again, doesn't like MAX_LEN_FNAM
+      CHARACTER*(512)
+     &	    runoffVelfile,
+     &	    runoffRadfile,
+     &      plumeMaskFile
+
+C-----------------------------------------
+C Parameters relating to the icefront package
+
+      COMMON /DOUBLEPLUME_ICEFRONT_PARMS_R/
+     &     ICEFRONTlatentHeat, 
+     &     ICEFRONTheatCapacity_Cp
+      Real*8 ICEFRONTlatentHeat
+      Real*8 ICEFRONTheatCapacity_Cp
+
+      COMMON /DOUBLEPLUME_ICEFRONT_FIELDS_RL/
+     &     icefront_TendT,
+     &     icefront_TendS
+      Real*8 icefront_TendT (1:sNx,1:sNy,Nr,nSx,nSy)
+      Real*8 icefront_TendS (1:sNx,1:sNy,Nr,nSx,nSy)
+
+      COMMON /DOUBLEPLUME_ICEFRONT_FIELDS_RS/
+     &     R_icefront,
+     &     icefrontlength
+      Real*8 R_icefront     (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+      Real*8 icefrontlength (1-OLx:sNx+OLx,1-OLy:sNy+OLy,nSx,nSy)
+
+C      LOGICAL ICEFRONTisOn
+      LOGICAL applyIcefrontTendT
+      LOGICAL applyIcefrontTendS
+      COMMON /DOUBLEPLUME_ICEFRONT_PARMS_L/
+C     &     ICEFRONTisOn,
+     &     applyIcefrontTendT,
+     &     applyIcefrontTendS
+
+C---------------------------------------------
+
+
+
+
+
+
+      INTEGER NEQ
+      DOUBLE PRECISION T, Y(4), YDOT(4)
+
+      Real*8 Tambient, Sambient, Tin, rho_a
+      DOUBLE PRECISION m_dot, Sb, Tb
+      DOUBLE PRECISION To, So, Uo, bo
+      DOUBLE PRECISION Ti, Si, Ui, bi, rho_i, rho_m
+      DOUBLE PRECISION a, b, c, beta_loc
+      DOUBLE PRECISION E_i, E_o, E_p
+      DOUBLE PRECISION RHO
+C      DOUBLE PRECISION, PARAMETER :: PI = 3.14159265358979323846
+
+C Y(1) = Qi
+C Y(2) = Mi
+C Y(3) = Hi
+C Y(4) = Bi
+C RPAR(1) = Qo
+C RPAR(2) = Mo
+C RPAR(3) = Ho
+C RPAR(4) = Bo
+
+C Interpolate from imposed ambient profiles
+      IF ( abs(T) .LE. zProfAbs(1) ) THEN
+       Tambient = taProf(1)
+       Sambient = saProf(1)
+      ELSEIF ( abs(T) .GE. zProfAbs(Nr) ) THEN
+       Tambient = taProf(Nr)
+       Sambient = saProf(Nr)
+      ELSE
+       CALL linint(Nr,zProfAbs,taProf,abs(T), Tambient)
+       CALL linint(Nr,zProfAbs,saProf,abs(T), Sambient)
+      ENDIF
+      
+	Tin = T
+
+      Ti = Y(3) / Y(1)
+      Si = Y(4) / Y(1)
+      Ui = Y(2) / Y(1)
+      bi = Y(1) / SQRT(PI * Y(2))
+
+C      To = RPAR(3) / RPAR(1)
+C      So = RPAR(4) / RPAR(1)
+C      Uo = RPAR(2) / RPAR(1)
+C      bo = RPAR(1) / SQRT(PI * RPAR(2))
+
+
+C      IF (Uo .EQ. 0.D0) THEN
+      To = 2.D0 !Tambient
+      So = 34.D0 !Sambient
+      Uo = 0.D0
+      bo = bi
+C      ENDIF
+
+      rho_i = RHO(Ti, Si, abs(Tin))
+      rho_a = RHO(To, So, abs(Tin))
+      rho_m = 0.002 * 1.204 + (1-0.002) * rho_i
+
+      beta_loc = 4000 * 0.02 * SQRT(0.001) / 334000
+      a = 1
+      
+      b = 0.00062 * SQRT(0.001) * Ui - beta_loc * Ui * 
+     &         (Ti - 0.08 - -0.000761 * abs(Tin))
+    
+      c = beta_loc * 0.00062 * SQRT(0.001) * Ui**2 * 
+     &         (Si * -0.0573 - Ti + 0.08 + -0.000761 * abs(Tin))
+    
+      m_dot = (-b + SQRT(b**2 - 4 * a * c)) / (2 * a)
+
+      Sb = 0.00062 * SQRT(0.001) * Ui * Si                  
+     &        / (m_dot + 0.00062 * SQRT(0.001) * Ui)
+      
+      Tb = -0.0573 * Sb + 0.08 + -0.000761 * abs(Tin)
+
+      E_i = 2 * PI * bi * 0.055 * (Ui)
+      E_o = 0.D0 !- 2 * PI * bi * 0.110 * Uo
+      E_p = - 0.015 * (0.1 / Ui)**2 * 
+     &       (9.81 * ((rho_a - rho_i) / 1025.0) * Ui * PI * bi**2)
+     &         / Ui**2
+      
+      IF (E_p .LT. 0) THEN
+       E_p = 0.D0
+      ELSEIF (Ui .LT. 0.25) THEN
+       E_p = 0.D0
+      ELSE
+       E_p = - 0.015 * (0.1 / Ui)**2 * 
+     &       (9.81 * ((rho_a - rho_i) / 1025.0) * Ui * PI * bi**2)
+     &         / Ui**2
+      ENDIF
+
+
+      YDOT(1) = E_i - E_o - E_p + b * m_dot
+
+      YDOT(2) = PI * 9.81 * bi**2 * (1**2 * (rho_a - rho_m)) /
+     &         (1.1 * 1025) + E_i * Uo - E_o * Ui - 
+     &          E_p * Ui - 0.001 * bi * Ui**2
+      
+      YDOT(3) = E_i * To - E_o * Ti - E_p * Ti + bi * m_dot * Tb 
+     &        - 4 * 0.02 * SQRT(0.001) * bi * Ui * (Ti - Tb)
+
+      YDOT(4) = E_i * So - E_o * Si - E_p * Si + bi * m_dot * Sb 
+     &        - 4 * 0.00062 * SQRT(0.001) * bi * Ui * (Si - Sb)
+
+      RETURN
+      END
 
 C---------------------------------------------------
 
@@ -6809,12 +10024,12 @@ C Header file pkg/DOUBLEPLUME
      &     runoffRad, runoffRad0, runoffRad1,
      &     plumeMask, 
      &     HeatFlux3D, FwFlux3D,
-     &     rProfPlume3D, wProfPlume3D,
-     &     tProfPlume3D, sProfPlume3D,
-     &     mProfPlume3D, mProfAv3D,
-     &     rProfPlume3DLocal, wProfPlume3DLocal,
-     &     tProfPlume3DLocal, sProfPlume3DLocal,
-     &     mProfPlume3DLocal, mProfAv3DLocal,
+     &     QiProf3D, MiProf3D,
+     &     HiProf3D, BiProf3D,
+     &     mProf3D, mProfAv3D,
+     &     QiProf3DLocal, MiProf3DLocal,
+     &     HiProf3DLocal, BiProf3DLocal,
+     &     mProf3DLocal, mProfAv3DLocal,
      &     temp_addMass3D, salt_addMass3D,
      &     volFluxDiff3D,
      &     Qin
@@ -6827,42 +10042,42 @@ C Header file pkg/DOUBLEPLUME
       Real*8 plumeMask  (1-Olx:sNx+Olx,1-Oly:sNy+Oly,nSx,nSy)
       Real*8 HeatFlux3D  (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       Real*8 FwFlux3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 rProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 wProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 tProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 sProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 mProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 QiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 MiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 HiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 BiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 mProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       Real*8 mProfAv3D       (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       Real*8 temp_addMass3D  (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       Real*8 salt_addMass3D  (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       Real*8 volFluxDiff3D   (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 rProfPlume3DLocal    (sNx,sNy,Nr)
-      Real*8 wProfPlume3DLocal    (sNx,sNy,Nr)
-      Real*8 tProfPlume3DLocal    (sNx,sNy,Nr)
-      Real*8 sProfPlume3DLocal    (sNx,sNy,Nr)
-      Real*8 mProfPlume3DLocal    (sNx,sNy,Nr)
+      Real*8 QiProf3DLocal    (sNx,sNy,Nr)
+      Real*8 MiProf3DLocal    (sNx,sNy,Nr)
+      Real*8 HiProf3DLocal    (sNx,sNy,Nr)
+      Real*8 BiProf3DLocal    (sNx,sNy,Nr)
+      Real*8 mProf3DLocal    (sNx,sNy,Nr)
       Real*8 mProfAv3DLocal       (sNx,sNy,Nr)
       Real*8 Qin (100)
 
       COMMON /DOUBLEPLUME_FIELDS_PROFILES/
-     &     sProf, tProf, ptProf, prProf, uProf, vProf,
-     &     rProfPlume, wProfPlume, tProfPlume, sProfPlume,
+     &     saProf, taProf, ptProf, prProf, uProf, vProf,
+     &     QiProf, MiProf, HiProf, BiProf,
      &     uProfPlume, mProfPlume, mProfAv, mProf, zProf, zProfAbs,
      &     volFLux, volFluxDiff,
      &     FwFlux, HeatFlux,
-     &     delta_z, aProfPlume, mIntProfPlume
-      Real*8 sProf  (Nr)
-      Real*8 tProf  (Nr)
+     &     delta_z, aProf, mIntProf
+      Real*8 saProf  (Nr)
+      Real*8 taProf  (Nr)
       Real*8 ptProf (Nr)
       Real*8 prProf (Nr)
       Real*8 uProf  (Nr)
       Real*8 vProf  (Nr)
-      Real*8 rProfPlume (Nr+1)
-      Real*8 wProfPlume (Nr+1)
-      Real*8 tProfPlume (Nr+1)
-      Real*8 sProfPlume (Nr+1)
-      Real*8 aProfPlume (Nr+1)   ! integrated area of plume from bottom
-      Real*8 mIntProfPlume (Nr+1)   ! integrated melt of plume from bottom
+      Real*8 QiProf (Nr+1)
+      Real*8 MiProf (Nr+1)
+      Real*8 HiProf (Nr+1)
+      Real*8 BiProf (Nr+1)
+      Real*8 aProf (Nr+1)   ! integrated area of plume from bottom
+      Real*8 mIntProf (Nr+1)   ! integrated melt of plume from bottom
       Real*8 uProfPlume (Nr)     
       Real*8 mProfPlume (Nr)
       Real*8 mProfAv    (Nr)
@@ -6989,14 +10204,14 @@ C     Y(4) = S
 C Interpolate from imposed ambient profiles
 
       IF ( abs(T) .LE. zProfAbs(1) ) THEN
-       Tambient = tProf(1)
-       Sambient = sProf(1)
+       Tambient = taProf(1)
+       Sambient = saprof(1)
       ELSEIF ( abs(T) .GE. zProfAbs(Nr) ) THEN
-       Tambient = tProf(Nr)
-       Sambient = sProf(Nr)
+       Tambient = taProf(Nr)
+       Sambient = saprof(Nr)
       ELSE
-       CALL linint(Nr,zProfAbs,tProf,abs(T),Tambient)
-       CALL linint(Nr,zProfAbs,sProf,abs(T),Sambient)
+       CALL linint(Nr,zProfAbs,taProf,abs(T),Tambient)
+       CALL linint(Nr,zProfAbs,saprof,abs(T),Sambient)
       ENDIF
            
 	  Tin = T
@@ -10030,12 +13245,12 @@ C Header file pkg/DOUBLEPLUME
      &     runoffRad, runoffRad0, runoffRad1,
      &     plumeMask, 
      &     HeatFlux3D, FwFlux3D,
-     &     rProfPlume3D, wProfPlume3D,
-     &     tProfPlume3D, sProfPlume3D,
-     &     mProfPlume3D, mProfAv3D,
-     &     rProfPlume3DLocal, wProfPlume3DLocal,
-     &     tProfPlume3DLocal, sProfPlume3DLocal,
-     &     mProfPlume3DLocal, mProfAv3DLocal,
+     &     QiProf3D, MiProf3D,
+     &     HiProf3D, BiProf3D,
+     &     mProf3D, mProfAv3D,
+     &     QiProf3DLocal, MiProf3DLocal,
+     &     HiProf3DLocal, BiProf3DLocal,
+     &     mProf3DLocal, mProfAv3DLocal,
      &     temp_addMass3D, salt_addMass3D,
      &     volFluxDiff3D,
      &     Qin
@@ -10048,42 +13263,42 @@ C Header file pkg/DOUBLEPLUME
       Real*8 plumeMask  (1-Olx:sNx+Olx,1-Oly:sNy+Oly,nSx,nSy)
       Real*8 HeatFlux3D  (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       Real*8 FwFlux3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 rProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 wProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 tProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 sProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 mProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 QiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 MiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 HiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 BiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 mProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       Real*8 mProfAv3D       (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       Real*8 temp_addMass3D  (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       Real*8 salt_addMass3D  (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       Real*8 volFluxDiff3D   (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 rProfPlume3DLocal    (sNx,sNy,Nr)
-      Real*8 wProfPlume3DLocal    (sNx,sNy,Nr)
-      Real*8 tProfPlume3DLocal    (sNx,sNy,Nr)
-      Real*8 sProfPlume3DLocal    (sNx,sNy,Nr)
-      Real*8 mProfPlume3DLocal    (sNx,sNy,Nr)
+      Real*8 QiProf3DLocal    (sNx,sNy,Nr)
+      Real*8 MiProf3DLocal    (sNx,sNy,Nr)
+      Real*8 HiProf3DLocal    (sNx,sNy,Nr)
+      Real*8 BiProf3DLocal    (sNx,sNy,Nr)
+      Real*8 mProf3DLocal    (sNx,sNy,Nr)
       Real*8 mProfAv3DLocal       (sNx,sNy,Nr)
       Real*8 Qin (100)
 
       COMMON /DOUBLEPLUME_FIELDS_PROFILES/
-     &     sProf, tProf, ptProf, prProf, uProf, vProf,
-     &     rProfPlume, wProfPlume, tProfPlume, sProfPlume,
+     &     saProf, taProf, ptProf, prProf, uProf, vProf,
+     &     QiProf, MiProf, HiProf, BiProf,
      &     uProfPlume, mProfPlume, mProfAv, mProf, zProf, zProfAbs,
      &     volFLux, volFluxDiff,
      &     FwFlux, HeatFlux,
-     &     delta_z, aProfPlume, mIntProfPlume
-      Real*8 sProf  (Nr)
-      Real*8 tProf  (Nr)
+     &     delta_z, aProf, mIntProf
+      Real*8 saProf  (Nr)
+      Real*8 taProf  (Nr)
       Real*8 ptProf (Nr)
       Real*8 prProf (Nr)
       Real*8 uProf  (Nr)
       Real*8 vProf  (Nr)
-      Real*8 rProfPlume (Nr+1)
-      Real*8 wProfPlume (Nr+1)
-      Real*8 tProfPlume (Nr+1)
-      Real*8 sProfPlume (Nr+1)
-      Real*8 aProfPlume (Nr+1)   ! integrated area of plume from bottom
-      Real*8 mIntProfPlume (Nr+1)   ! integrated melt of plume from bottom
+      Real*8 QiProf (Nr+1)
+      Real*8 MiProf (Nr+1)
+      Real*8 HiProf (Nr+1)
+      Real*8 BiProf (Nr+1)
+      Real*8 aProf (Nr+1)   ! integrated area of plume from bottom
+      Real*8 mIntProf (Nr+1)   ! integrated melt of plume from bottom
       Real*8 uProfPlume (Nr)     
       Real*8 mProfPlume (Nr)
       Real*8 mProfAv    (Nr)
@@ -10210,14 +13425,14 @@ C     Y(4) = S
 C     Interpolate from imposed ambient profiles
 
       IF ( abs(T) .LE. zProfAbs(1) ) THEN
-       Tambient = tProf(1)
-       Sambient = sProf(1)
+       Tambient = taProf(1)
+       Sambient = saProf(1)
       ELSEIF ( abs(T) .GE. zProfAbs(Nr) ) THEN
-       Tambient = tProf(Nr)
-       Sambient = sProf(Nr)
+       Tambient = taProf(Nr)
+       Sambient = saProf(Nr)
       ELSE
-       CALL linint(Nr,zProfAbs,tProf,abs(T),Tambient)
-       CALL linint(Nr,zProfAbs,sProf,abs(T),Sambient)
+       CALL linint(Nr,zProfAbs,taProf,abs(T),Tambient)
+       CALL linint(Nr,zProfAbs,saProf,abs(T),Sambient)
       ENDIF
 
       Tambient = 2.D0
@@ -10227,7 +13442,7 @@ C     Interpolate from imposed ambient profiles
       rho_1   = RHO(Y(3),Y(4),Tin)
       rho_0 = RHO(Tambient,Sambient,Tin)
       
-      print *, "In Halfcone. rho = ", rho_1, rho_0
+C      print *, "In Halfcone. rho = ", rho_1, rho_0
 
 C     Equations for Sb, Tb and mdot
 

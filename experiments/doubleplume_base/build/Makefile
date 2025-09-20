@@ -1,7 +1,7 @@
 # Multithreaded + multi-processing makefile for:
 #    Darwin cos-2a12598.local 23.6.0 Darwin Kernel Version 23.6.0: Thu Apr 24 20:29:18 PDT 2025; root:xnu-10063.141.1.705.2~1/RELEASE_ARM64_T6000 arm64
 # This makefile was generated automatically on
-#    Fri Sep 19 13:23:54 EDT 2025
+#    Sat Sep 20 10:37:14 EDT 2025
 # by the command:
 #    ../../../tools/genmake2 -mods ../code
 # executed by:
@@ -1406,7 +1406,7 @@ BUILD_INFO.h:
 	@echo Creating $@ ...
 	-echo "#define THISVER 'checkpoint69d'" > $@
 	-echo "#define THISUSER 'mmamer3'" >> $@
-	-echo "#define THISDATE 'Fri Sep 19 13:23:54 EDT 2025'" >> $@
+	-echo "#define THISDATE 'Sat Sep 20 10:37:14 EDT 2025'" >> $@
 	-echo "#define THISHOST 'cos-2a12598.local'" >> $@
 
 # The normal chain of rules is (  .F - .for - .o  )

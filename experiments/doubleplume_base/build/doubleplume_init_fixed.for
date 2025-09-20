@@ -3330,12 +3330,12 @@ C Header file pkg/DOUBLEPLUME
      &     runoffRad, runoffRad0, runoffRad1,
      &     plumeMask, 
      &     HeatFlux3D, FwFlux3D,
-     &     rProfPlume3D, wProfPlume3D,
-     &     tProfPlume3D, sProfPlume3D,
-     &     mProfPlume3D, mProfAv3D,
-     &     rProfPlume3DLocal, wProfPlume3DLocal,
-     &     tProfPlume3DLocal, sProfPlume3DLocal,
-     &     mProfPlume3DLocal, mProfAv3DLocal,
+     &     QiProf3D, MiProf3D,
+     &     HiProf3D, BiProf3D,
+     &     mProf3D, mProfAv3D,
+     &     QiProf3DLocal, MiProf3DLocal,
+     &     HiProf3DLocal, BiProf3DLocal,
+     &     mProf3DLocal, mProfAv3DLocal,
      &     temp_addMass3D, salt_addMass3D,
      &     volFluxDiff3D,
      &     Qin
@@ -3348,42 +3348,42 @@ C Header file pkg/DOUBLEPLUME
       Real*8 plumeMask  (1-Olx:sNx+Olx,1-Oly:sNy+Oly,nSx,nSy)
       Real*8 HeatFlux3D  (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       Real*8 FwFlux3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 rProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 wProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 tProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 sProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 mProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 QiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 MiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 HiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 BiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      Real*8 mProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       Real*8 mProfAv3D       (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       Real*8 temp_addMass3D  (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       Real*8 salt_addMass3D  (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       Real*8 volFluxDiff3D   (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      Real*8 rProfPlume3DLocal    (sNx,sNy,Nr)
-      Real*8 wProfPlume3DLocal    (sNx,sNy,Nr)
-      Real*8 tProfPlume3DLocal    (sNx,sNy,Nr)
-      Real*8 sProfPlume3DLocal    (sNx,sNy,Nr)
-      Real*8 mProfPlume3DLocal    (sNx,sNy,Nr)
+      Real*8 QiProf3DLocal    (sNx,sNy,Nr)
+      Real*8 MiProf3DLocal    (sNx,sNy,Nr)
+      Real*8 HiProf3DLocal    (sNx,sNy,Nr)
+      Real*8 BiProf3DLocal    (sNx,sNy,Nr)
+      Real*8 mProf3DLocal    (sNx,sNy,Nr)
       Real*8 mProfAv3DLocal       (sNx,sNy,Nr)
       Real*8 Qin (100)
 
       COMMON /DOUBLEPLUME_FIELDS_PROFILES/
-     &     sProf, tProf, ptProf, prProf, uProf, vProf,
-     &     rProfPlume, wProfPlume, tProfPlume, sProfPlume,
+     &     saProf, taProf, ptProf, prProf, uProf, vProf,
+     &     QiProf, MiProf, HiProf, BiProf,
      &     uProfPlume, mProfPlume, mProfAv, mProf, zProf, zProfAbs,
      &     volFLux, volFluxDiff,
      &     FwFlux, HeatFlux,
-     &     delta_z, aProfPlume, mIntProfPlume
-      Real*8 sProf  (Nr)
-      Real*8 tProf  (Nr)
+     &     delta_z, aProf, mIntProf
+      Real*8 saProf  (Nr)
+      Real*8 taProf  (Nr)
       Real*8 ptProf (Nr)
       Real*8 prProf (Nr)
       Real*8 uProf  (Nr)
       Real*8 vProf  (Nr)
-      Real*8 rProfPlume (Nr+1)
-      Real*8 wProfPlume (Nr+1)
-      Real*8 tProfPlume (Nr+1)
-      Real*8 sProfPlume (Nr+1)
-      Real*8 aProfPlume (Nr+1)   ! integrated area of plume from bottom
-      Real*8 mIntProfPlume (Nr+1)   ! integrated melt of plume from bottom
+      Real*8 QiProf (Nr+1)
+      Real*8 MiProf (Nr+1)
+      Real*8 HiProf (Nr+1)
+      Real*8 BiProf (Nr+1)
+      Real*8 aProf (Nr+1)   ! integrated area of plume from bottom
+      Real*8 mIntProf (Nr+1)   ! integrated melt of plume from bottom
       Real*8 uProfPlume (Nr)     
       Real*8 mProfPlume (Nr)
       Real*8 mProfAv    (Nr)

@@ -848,7 +848,7 @@ CEOP
      &     SQUEEZE_RIGHT , 1)
 
       WRITE(msgBuf,'(2A)') '// Build date:        ',
-     &     'Fri Sep 19 13:23:54 EDT 2025'
+     &     'Sat Sep 20 10:37:14 EDT 2025'
       CALL PRINT_MESSAGE( msgBuf, standardMessageUnit,
      &     SQUEEZE_RIGHT , 1)
 
