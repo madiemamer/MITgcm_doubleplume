@@ -1,1 +1,0 @@
-../../../pkg/obcs/obcs_ad_check_lev3_dir.h
