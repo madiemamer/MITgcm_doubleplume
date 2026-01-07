@@ -35,17 +35,17 @@ C Calculate melt rate from 3 equation formualtion (as for plume models)
 
 C     Equations for Sb, Tb and mdot
 
-      a = lambda1*(GamT*c_w-GamS*c_i)
+      a = lam1*(gammaT*cp-gammaS*c_i)
 
-      b = GamS*c_i*(lambda1*salinity-lambda2-lambda3*depth+
+      b = gammaS*c_i*(lam1*salinity-lam2-lam3*depth+
      &         iceTemp-(L/c_i))
-     &        -GamT*c_w*(temperature-lambda2-lambda3*depth)
+     &        -gammaT*cp*(temperature-lam2-lam3*depth)
 
-      c = GamS*salinity*(c_i*(lambda2+lambda3*depth-iceTemp)+L)
+      c = gammaS*salinity*(c_i*(lam2+lam3*depth-iceTemp)+L)
 
       Sb   = (1./(2.*a))*(-b-((b**2.-4.*a*c)**0.5)) !Sb
-      Tb   = lambda1*Sb+lambda2+lambda3*depth !Tb
-      mdot = GamS*(Cd**0.5)*absVelocity*(salinity-Sb)/Sb ! mdot
+      Tb   = lam1*Sb+lam2+lam3*depth !Tb
+      mdot = gammaS*(Cd**0.5)*absVelocity*(salinity-Sb)/Sb ! mdot
 
 C Meltrate is in m d^-1
        meltrate = 86400.*mdot

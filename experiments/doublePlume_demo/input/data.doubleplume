@@ -1,0 +1,22 @@
+# ***************
+# DOUBLEPLUME
+# ***************
+
+# For plume:
+ &DOUBLEPLUME_PARM01
+ runoffVelfile = 'runoffVel.bin'
+ runoffRadfile = 'runoffRad.bin'
+ plumeMaskFile = 'plumeMask.bin'
+ usePlumeDiagnostics=.TRUE.,
+ conserveMass = .FALSE.,
+ T_sg = 0.001,
+ S_sg = 0.001,
+ iceTemp=-10.,
+ backgroundVel=0.017,
+ &
+
+ &DOUBLEPLUME_PARM02
+ &
+
+ &DOUBLEPLUME_PARM03
+ &

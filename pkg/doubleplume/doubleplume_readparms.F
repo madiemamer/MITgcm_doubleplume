@@ -40,21 +40,32 @@ C    PARMO1 - DOUBLEPLUME inputs
      &     IceTemp,
      &     usePlumeDiagnostics,
      &     conserveMass,
-     &     rho_ref,
+     &     rho_r,
      &     g,
-     &     c_w,
+     &     cp,
      &     c_i,
      &     L,
-     &     lambda1,
-     &     lambda2,
-     &     lambda3,
-     &     GamT,
-     &     GamS,
+     &     lam1,
+     &     lam2,
+     &     lam3,
+     &     gammaT,
+     &     gammaS,
      &     Cd,
      &     useSheetPlume,
      &     useConePlume,
      &     maxDepth,
-     &     backgroundVel
+     &     backgroundVel,
+     &     c1, c2, epsilon,
+     &     alpha_1, alpha_2,
+     &     gamma_i,
+     &     Fr0, 
+     &     gas_lam1, gas_lam2, d_gas,
+     &     fp_g,
+     &     cp_g,
+     &     T_g,
+     &     Ru,
+     &     Tcr_O, Pcr_O, M_O, dhSol_gas,
+     &     omega_g, K_g, plumeLayers
 
 C    PARMO2 - icefront inputs required for thermodynamics
       NAMELIST /DOUBLEPLUME_PARM02/
@@ -87,24 +98,47 @@ C     Default values for PARM01
       conserveMass    = .FALSE.
       useSheetPlume   = .FALSE.
       useConePlume    = .FALSE.
-      rho_ref= 1020.D0
+      rho_r  = 1025.D0
       g      = 9.81D0
-      c_w    = 3994.D0
+      cp     = 3994.D0
       c_i    = 2009.D0
-      L      = 334000D0
-      lambda1= -0.0573D0
-      lambda2= 0.0832D0
-      lambda3= 0.000761D0
-      GamT   = 0.022
-      GamS   = 0.00062
-      Cd     = 0.0025
+      L      = 334000.D0
+      lam1   = -0.0573D0
+      lam2   = 0.0832D0
+      lam3   = 0.000761D0
+      gammaT = 0.022
+      gammaS = 0.00062
+      Cd     = 0.001
       backgroundVel = 0.001
+      plumeLayers = 4901
 
 C Default values for PARMO2
-       ICEFRONTlatentHeat       =  334.0 _d 3
-       ICEFRONTHeatCapacity_Cp  = 2000.0 _d 0
-       applyIcefrontTendT       = .TRUE.
-       applyIcefrontTendS       = .TRUE.
+      ICEFRONTlatentHeat       =  334.0 _d 3
+      ICEFRONTHeatCapacity_Cp  = 2000.0 _d 0
+      applyIcefrontTendT       = .TRUE.
+      applyIcefrontTendS       = .TRUE.
+
+C Default values for PARM03
+      c1 = 0.0
+      c2 = 1.0
+      epsilon   = 0.0175
+      alpha_1   = 0.055
+      alpha_2   = 0.110
+      gamma_i   = 1.10
+      Fr0       = 1.6
+      gas_lam1  = 0.8
+      gas_lam2  = 1.10
+      d_gas     = 0.01
+      fp_g        = 0.95
+      cp_g      = 0.53 * cp
+      T_g       = T_sg
+      Ru        = 8.314472
+      Tcr_O     = 154.58
+      Pcr_O     = 5042825.270
+      omega_g   = 0.0216
+      M_O       = 2*15.9994/1000
+      K_g         = 1.0
+      dhSol_gas = 428733.0
 
 #ifdef ALLOW_PTRACERS
 C Default values for PARM03

@@ -1,0 +1,27 @@
+# =================== 
+# | OBCS parameters | 
+# =================== 
+
+# Open boundary types and locations
+ &OBCS_PARM01
+ useOBCSprescribe=.TRUE.,
+ useOBCSsponge=.TRUE.,
+ OB_Ieast=-11,
+ OBEtFile='EBCt.bin',
+ OBEsFile='EBCs.bin',
+ OBEuFile='EBCu.bin',
+ &
+
+# Orlanski parameters
+ &OBCS_PARM02
+ &
+
+# Sponge-layer parameters
+ &OBCS_PARM03
+ spongeThickness=10,
+ Urelaxobcsbound=1.00000000e+01,
+ Urelaxobcsinner=1.00000000e+05,
+ Vrelaxobcsbound=1.00000000e+01,
+ Vrelaxobcsinner=1.00000000e+05,
+ &
+

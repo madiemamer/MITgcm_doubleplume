@@ -1,0 +1,29 @@
+# ========================== 
+# | DIAGNOSTICS parameters | 
+# ========================== 
+
+# Diagnostics package choices
+ &DIAGNOSTICS_LIST
+ diag_mnc=.FALSE.,
+ fields(1:5,1)='THETA','SALT','UVEL','WVEL','VVEL',
+ fileName(1)='dynDiag',
+ frequency(1)=1000,
+ timePhase(1)=0.00000000e+00,
+fields(1:5,2)='icefrtQi','icefrtMi','icefrtHi','icefrtBi','icefrtCi',
+ fileName(2)='plumeDiag',
+ frequency(2)=1000,
+ timePhase(2)=0.00000000e+00,
+ fields(1:5,3)='THETA','SALT','UVEL','WVEL','VVEL',
+ fileName(3)='dynDiag_inst',
+ frequency(3)=-1000,
+ timePhase(3)=0.00000000e+00,
+fields(1:5,4)='icefrtQi','icefrtMi','icefrtHi','icefrtBi','icefrtCi',
+ fileName(4)='plumeDiag_inst',
+ frequency(4)=-1000,
+ timePhase(4)=0.00000000e+00,
+ &
+
+# Statistics package choices
+ &DIAG_STATIS_PARMS
+ &
+

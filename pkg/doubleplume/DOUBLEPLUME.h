@@ -11,11 +11,12 @@ C Header file pkg/DOUBLEPLUME
 
       COMMON /DOUBLEPLUME_INTEGERS/
      &       iceDepthK,
-     &       runoffLocation, plumeInputLayer
+     &       runoffLocation, plumeInputLayer, j_peel
 
       INTEGER iceDepthK
       INTEGER runoffLocation  (100,2)
       INTEGER plumeInputLayer (100)
+      INTEGER j_peel
 
       COMMON /DOUBLEPLUME_LOGICALS/
      &      usePlumeDiagnostics,
@@ -38,14 +39,17 @@ C Header file pkg/DOUBLEPLUME
      &     runoffRad, runoffRad0, runoffRad1,
      &     plumeMask, 
      &     HeatFlux3D, FwFlux3D,
-     &     rProfPlume3D, wProfPlume3D,
-     &     tProfPlume3D, sProfPlume3D,
-     &     mProfPlume3D, mProfAv3D,
-     &     rProfPlume3DLocal, wProfPlume3DLocal,
-     &     tProfPlume3DLocal, sProfPlume3DLocal,
-     &     mProfPlume3DLocal, mProfAv3DLocal,
+     &     QiProf3D, MiProf3D,
+     &     HiProf3D, BiProf3D,
+     &     mProf3D, mProfAv3D,
+     &     QiProf3DLocal, MiProf3DLocal,
+     &     HiProf3DLocal, BiProf3DLocal,
+     &     mProf3DLocal, mProfAv3DLocal,
      &     temp_addMass3D, salt_addMass3D,
-     &     volFluxDiff3D,
+     &     volFluxDiff3D, QoProf3DLocal,
+     &     MoProf3DLocal, HoProf3DLocal,
+     &     BoProf3DLocal, QoProf3D, MoProf3D,
+     &     HoProf3D, BoProf3D,
      &     Qin
       _RL runoffVel  (1-Olx:sNx+Olx,1-Oly:sNy+Oly,nSx,nSy)
       _RL runoffVel0 (1-Olx:sNx+Olx,1-Oly:sNy+Oly,nSx,nSy)
@@ -56,67 +60,108 @@ C Header file pkg/DOUBLEPLUME
       _RL plumeMask  (1-Olx:sNx+Olx,1-Oly:sNy+Oly,nSx,nSy)
       _RS HeatFlux3D  (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       _RS FwFlux3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      _RS rProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      _RS wProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      _RS tProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      _RS sProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      _RS mProfPlume3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      _RS QiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      _RS MiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      _RS HgProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      _RS CiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      _RS MbProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      _RS HiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      _RS BiProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      _RS mProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      _RS QoProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      _RS MoProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      _RS HoProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
+      _RS BoProf3D    (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       _RS mProfAv3D       (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       _RL temp_addMass3D  (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       _RL salt_addMass3D  (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
       _RL volFluxDiff3D   (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      _RS rProfPlume3DLocal    (sNx,sNy,Nr)
-      _RS wProfPlume3DLocal    (sNx,sNy,Nr)
-      _RS tProfPlume3DLocal    (sNx,sNy,Nr)
-      _RS sProfPlume3DLocal    (sNx,sNy,Nr)
-      _RS mProfPlume3DLocal    (sNx,sNy,Nr)
+      _RS QiProf3DLocal    (sNx,sNy,Nr)
+      _RS MiProf3DLocal    (sNx,sNy,Nr)
+      _RS HiProf3DLocal    (sNx,sNy,Nr)
+      _RS CiProf3DLocal    (sNx,sNy,Nr)
+      _RS HgProf3DLocal    (sNx,sNy,Nr)
+      _RS MbProf3DLocal    (sNx,sNy,Nr)
+      _RS BiProf3DLocal    (sNx,sNy,Nr)
+      _RS QoProf3DLocal    (sNx,sNy,Nr)
+      _RS MoProf3DLocal    (sNx,sNy,Nr)
+      _RS HoProf3DLocal    (sNx,sNy,Nr)
+      _RS BoProf3DLocal    (sNx,sNy,Nr)
+      _RS mProf3DLocal    (sNx,sNy,Nr)
       _RS mProfAv3DLocal       (sNx,sNy,Nr)
       _RS Qin (100)
 
       COMMON /DOUBLEPLUME_FIELDS_PROFILES/
-     &     sProf, tProf, ptProf, prProf, uProf, vProf,
-     &     rProfPlume, wProfPlume, tProfPlume, sProfPlume,
+     &     saProf, taProf, ptProf, prProf, uProf, vProf,
+     &     QiProf, MiProf, HiProf, BiProf,
      &     uProfPlume, mProfPlume, mProfAv, mProf, zProf, zProfAbs,
-     &     volFLux, volFluxDiff,
+     &     volFLux, volFluxDiff, zProfAbs_f,
      &     FwFlux, HeatFlux,
-     &     delta_z, aProfPlume, mIntProfPlume
-      _RL sProf  (Nr)
-      _RL tProf  (Nr)
+     &     delta_z, aProf, mIntProf, QoProf, MoProf,
+     &     HoProf, BoProf, QiProf_f, MiProf_f, HiProf_f, HgProf_f,
+     &     BiProf_f, MbProf_f, CiProf_f, QoProf_f, MoProf_f, HoProf_f,
+     &     BoProf_f, CoProf_f, z_peel, iter_l
+      _RL saProf  (Nr)
+      _RL taProf  (Nr)
       _RL ptProf (Nr)
       _RL prProf (Nr)
       _RL uProf  (Nr)
       _RL vProf  (Nr)
-      _RL rProfPlume (Nr+1)
-      _RL wProfPlume (Nr+1)
-      _RL tProfPlume (Nr+1)
-      _RL sProfPlume (Nr+1)
-      _RL aProfPlume (Nr+1)   ! integrated area of plume from bottom
-      _RL mIntProfPlume (Nr+1)   ! integrated melt of plume from bottom
+      _RL QiProf_f (INT(ABS(490) / 0.1D0)+ 1)
+      _RL MiProf_f (INT(ABS(490) / 0.1D0)+ 1)
+      _RL HiProf_f (INT(ABS(490) / 0.1D0) + 1)
+      _RL HgProf_f(INT(ABS(490) / 0.1D0) + 1)
+      _RL BiProf_f (INT(ABS(490) / 0.1D0) + 1)
+      _RL MbProf_f (INT(ABS(490) / 0.1D0) + 1)
+      _RL CiProf_f (INT(ABS(490) / 0.1D0) + 1)
+      _RL QiProf (Nr+1)
+      _RL MiProf (Nr+1)
+      _RL HiProf (Nr+1)
+      _RL HgProf (Nr+1)
+      _RL BiProf (Nr+1)
+      _RL MbProf (Nr+1)
+      _RL CiProf (Nr+1)
+      _RL aProf  (Nr+1)   ! integrated area of plume from bottom
+      _RL mIntProf (Nr+1)   ! integrated melt of plume from bottom
       _RL uProfPlume (Nr)     
       _RL mProfPlume (Nr)
       _RL mProfAv    (Nr)
       _RL mProf      (Nr)
       _RL zProf      (Nr+1)
       _RL zProfAbs   (Nr+1)
+      _RL zProf_f      (INT(ABS(490) / 0.1D0) + 1)
+      _RL zProfAbs_f   (INT(ABS(490) / 0.1D0) + 1)
       _RL volFlux     (Nr+1)
-      _RL volFluxDiff (Nr)
+      _RL volFluxDiff (Nr+1)
       _RL HeatFlux(Nr)
       _RL FwFlux(Nr)
       _RL delta_z(Nr)
+      _RL QoProf_f (INT(ABS(490) / 0.1D0)+ 1)
+      _RL MoProf_f (INT(ABS(490) / 0.1D0)+ 1)
+      _RL HoProf_f (INT(ABS(490) / 0.1D0) + 1)
+      _RL BoProf_f (INT(ABS(490) / 0.1D0) + 1)
+      _RL CoProf_f (INT(ABS(490) / 0.1D0) + 1)
+      _RL QoProf (Nr+1)
+      _RL MoProf (Nr+1)
+      _RL HoProf (Nr+1)
+      _RL BoProf (Nr+1)
+      _RL CoProf (Nr+1)
+      DOUBLE PRECISION iter_l
+      DOUBLE PRECISION z_peel (Nr)
       
 #ifdef DOUBLEPLUME_ALLOW_DETACHED_PLUME      
       COMMON /DOUBLEPLUME_FIELDS_DETACHED/
-     & thetaProfPlume, distanceProfPlume,
-     & thetaProfPlume3D, distanceProfPlume3D,
-     & thetaProfPlume3DLocal, distanceProfPlume3DLocal
-      _RL thetaProfPlume (Nr+1)
-      _RL distanceProfPlume (Nr+1)
-      _RL thetaProfPlume3D
+     & thetaProf, distanceProf,
+     & thetaProf3D, distanceProf3D,
+     & thetaProf3DLocal, distanceProf3DLocal
+      _RL thetaProf (Nr+1)
+      _RL distanceProf (Nr+1)
+      _RL thetaProf3D
      &  (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)
-      _RL distanceProfPlume3D
+      _RL distanceProf3D
      &  (1-OLx:sNx+OLx,1-Oly:sNy+Oly,Nr,nSx,nSy)      
-      _RL thetaProfPlume3DLocal (sNx,sNy,Nr)
-      _RL distanceProfPlume3DLocal (sNx,sNy,Nr)
+      _RL thetaProf3DLocal (sNx,sNy,Nr)
+      _RL distanceProf3DLocal (sNx,sNy,Nr)
 #endif      
 
       COMMON /DOUBLEPLUME_PARM_R/
@@ -127,14 +172,14 @@ C Header file pkg/DOUBLEPLUME
      &     RTOL, ATOL,
      &     iceTemp,
      &     outputThickness,
-     &     kap, rho_ref, g, c_w, c_i, L,
-     &     gam, lambda1, lambda2, lambda3,
-     &     GamT, GamS, Cd,
+     &     kap, rho_r, g, cp, c_i, L,
+     &     gam, lam1, lam2, lam3,
+     &     gammaT, gammaS, Cd,
      &     sOutPlume, tOutPlume,
      &     iceDepth,
      &     backgroundVel,
      &     ptracerfluxSum,
-     &     maxDepth
+     &     maxDepth, plumeLayers
       _RS E_0
       _RS Q_sg
       _RL T_sg
@@ -149,30 +194,31 @@ C Header file pkg/DOUBLEPLUME
       _RL iceTemp
       _RL outputThickness
       _RL kap
-      _RL rho_ref
+      _RL rho_r
       _RL g
-      _RL c_w
+      _RL cp
       _RL c_i
       _RL L
       _RL gam
-      _RL lambda1
-      _RL lambda2
-      _RL lambda3
+      _RL lam1
+      _RL lam2
+      _RL lam3
       _RL sOutPlume
       _RL tOutPlume
-      _RL gamS
-      _RL gamT
-      _RL cd
+      _RL gammaS
+      _RL gammaT
+      _RL Cd
       _RL iceDepth
       _RL backgroundVel
       _RL ptracerFluxSum
       _RL maxDepth
+      INTEGER plumeLayers
 
       COMMON /DOUBLEPLUME_FILES/
      &	    runoffVelfile,
      &	    runoffRadfile,
      &      plumeMaskFile
-C Again, doesn't like MAX_LEN_FNAM
+C Again, doesnt like MAX_LEN_FNAM
       CHARACTER*(512)
      &	    runoffVelfile,
      &	    runoffRadfile,
@@ -206,6 +252,35 @@ C      LOGICAL ICEFRONTisOn
 C     &     ICEFRONTisOn,
      &     applyIcefrontTendT,
      &     applyIcefrontTendS
+C-----------------------------------------
+C Parameters relating to the Bubble DoublePlume package
+
+      COMMON /DOUBLEPLUME_FILES/
+     &     c1, c2, epsilon,
+     &     alpha_1, alpha_2, gamma_i,
+     &     Fr0, gas_lam1, gas_lam2, d_gas,
+     &     fp_g, cp_g, T_g, Ru, Tcr_O, Pcr_O, omega_g,
+     &     M_O, K_g, dhSol_gas
+      _RL c1
+      _RL c2
+      _RL epsilon
+      _RL alpha_1
+      _RL alpha_2
+      _RL gamma_i
+      _RL Fr0
+      _RL gas_lam1
+      _RL gas_lam2
+      _RL d_gas
+      _RL fp_g
+      _RL cp_g
+      _RL T_g
+      _RL Ru
+      _RL Tcr_O
+      _RL Pcr_O
+      _RL omega_g
+      _RL M_O
+      _RL K_g 
+      _RL dhSol_gas
 
 C---------------------------------------------
 

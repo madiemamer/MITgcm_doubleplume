@@ -46,6 +46,7 @@ C---+----1----+----2----+----3----+----4----+----5----+----6----+----7-|--+----|
       diagCode  = 'SM      MR      '
       CALL DIAGNOSTICS_ADDTOLIST( diagNum,
      I     diagName, diagCode, diagUnits, diagTitle, 0, myThid )
+C      CALL DIAGNOSTICS_SETKLEV( diagName, plumeLayers , myThid )
 
       diagName  = 'icefrntT'
       diagTitle = 'plume temperature'
@@ -53,6 +54,7 @@ C---+----1----+----2----+----3----+----4----+----5----+----6----+----7-|--+----|
       diagCode  = 'SM      MR      '
       CALL DIAGNOSTICS_ADDTOLIST( diagNum,
      I     diagName, diagCode, diagUnits, diagTitle, 0, myThid )
+C      CALL DIAGNOSTICS_SETKLEV( diagName, plumeLayers , myThid )
 
       diagName  = 'icefrntS'
       diagTitle = 'plume salinity'
@@ -60,6 +62,7 @@ C---+----1----+----2----+----3----+----4----+----5----+----6----+----7-|--+----|
       diagCode  = 'SM      MR      '
       CALL DIAGNOSTICS_ADDTOLIST( diagNum,
      I     diagName, diagCode, diagUnits, diagTitle, 0, myThid )
+C      CALL DIAGNOSTICS_SETKLEV( diagName, plumeLayers , myThid )
 
       diagName  = 'icefrntR'
       diagTitle = 'plume thickness'
@@ -67,36 +70,79 @@ C---+----1----+----2----+----3----+----4----+----5----+----6----+----7-|--+----|
       diagCode  = 'SM      MR      '
       CALL DIAGNOSTICS_ADDTOLIST( diagNum,
      I     diagName, diagCode, diagUnits, diagTitle, 0, myThid )
+C      CALL DIAGNOSTICS_SETKLEV( diagName, plumeLayers , myThid )
 
-      diagName  = 'icefrntM'
-      diagTitle = 'plume melt rate'
-      diagUnits = 'm d^-1          '
+      diagName  = 'icefrtQi'
+      diagTitle = 'inner plume vol flux'
+      diagUnits = 'm^3 s^-1        '
       diagCode  = 'SM      MR      '
       CALL DIAGNOSTICS_ADDTOLIST( diagNum,
      I     diagName, diagCode, diagUnits, diagTitle, 0, myThid )
+C      CALL DIAGNOSTICS_SETKLEV( diagName, plumeLayers , myThid )
 
-      diagName  = 'icefrntA'
-      diagTitle = 'average cell melt rate'
+      diagName  = 'icefrtMi'
+      diagTitle = 'inner plume momentum flux'
+      diagUnits = 'm^4 s^-2         '
+      diagCode  = 'SM      MR      '
+      CALL DIAGNOSTICS_ADDTOLIST( diagNum,
+     I     diagName, diagCode, diagUnits, diagTitle, 0, myThid )
+C      CALL DIAGNOSTICS_SETKLEV( diagName, plumeLayers , myThid )
+
+      diagName  = 'icefrtHi'
+      diagTitle = 'inner plume heat flux'
+      diagUnits = 'J s^-1         '
+      diagCode  = 'SM      MR      '
+      CALL DIAGNOSTICS_ADDTOLIST( diagNum,
+     I     diagName, diagCode, diagUnits, diagTitle, 0, myThid )
+C      CALL DIAGNOSTICS_SETKLEV( diagName, plumeLayers , myThid )
+
+      diagName  = 'icefrtBi'
+      diagTitle = 'inner plume salt flux'
+      diagUnits = 'm^3 ppt s^-1         '
+      diagCode  = 'SM      MR      '
+      CALL DIAGNOSTICS_ADDTOLIST( diagNum,
+     I     diagName, diagCode, diagUnits, diagTitle, 0, myThid )
+C      CALL DIAGNOSTICS_SETKLEV( diagName, plumeLayers , myThid )
+
+      diagName  = 'icefrtCi'
+      diagTitle = 'gas concentration'
       diagUnits = 'm d^-1         '
       diagCode  = 'SM      MR      '
       CALL DIAGNOSTICS_ADDTOLIST( diagNum,
      I     diagName, diagCode, diagUnits, diagTitle, 0, myThid )
+C      CALL DIAGNOSTICS_SETKLEV( diagName, plumeLayers , myThid )
 
-#ifdef DOUBLEPLUME_ALLOW_DETACHED_PLUME
-      diagName  = 'PlumAngl'
-      diagTitle = 'angle of FW plume'
-      diagUnits = 'nondim         '
+      diagName  = 'icefrtQo'
+      diagTitle = 'outer plume vol flux'
+      diagUnits = 'm^3 s^-1         '
       diagCode  = 'SM      MR      '
       CALL DIAGNOSTICS_ADDTOLIST( diagNum,
      I     diagName, diagCode, diagUnits, diagTitle, 0, myThid )
+C      CALL DIAGNOSTICS_SETKLEV( diagName, plumeLayers , myThid )
 
-      diagName  = 'PlumDist'
-      diagTitle = 'dist of FW plume from wall'
-      diagUnits = 'm              '
+      diagName  = 'icefrtMo'
+      diagTitle = 'outer plume momentum flux'
+      diagUnits = 'm^4 s^-1         '
       diagCode  = 'SM      MR      '
       CALL DIAGNOSTICS_ADDTOLIST( diagNum,
      I     diagName, diagCode, diagUnits, diagTitle, 0, myThid )
-#endif
+C      CALL DIAGNOSTICS_SETKLEV( diagName, plumeLayers , myThid )
+
+      diagName  = 'icefrtHo'
+      diagTitle = 'outer plume heat flux'
+      diagUnits = 'J s^-1         '
+      diagCode  = 'SM      MR      '
+      CALL DIAGNOSTICS_ADDTOLIST( diagNum,
+     I     diagName, diagCode, diagUnits, diagTitle, 0, myThid )
+C      CALL DIAGNOSTICS_SETKLEV( diagName, plumeLayers , myThid )
+
+      diagName  = 'icefrtBo'
+      diagTitle = 'outer plume salt flux'
+      diagUnits = 'm^3 ppt s^-1         '
+      diagCode  = 'SM      MR      '            ! Change R to X for custom levels
+      CALL DIAGNOSTICS_ADDTOLIST( diagNum,
+     I     diagName, diagCode, diagUnits, diagTitle, 0, myThid )
+C      CALL DIAGNOSTICS_SETKLEV( diagName, plumeLayers , myThid )
 
 #endif /* ALLOW_DIAGNOSTICS */
 #endif /* ALLOW_DOUBLEPLUME */

@@ -1,0 +1,400 @@
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=        20
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=        20
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=        20
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=        20
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=        40
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=        40
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=        40
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=        40
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=        60
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=        60
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=        60
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=        60
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=        80
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=        80
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=        80
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=        80
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       100
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       100
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       100
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       100
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       120
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       120
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       120
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       120
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       140
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       140
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       140
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       140
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       160
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       160
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       160
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       160
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       180
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       180
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       180
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       180
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       200
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       200
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       200
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       200
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       220
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       220
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       220
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       220
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       240
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       240
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       240
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       240
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       260
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       260
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       260
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       260
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       280
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       280
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       280
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       280
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       300
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       300
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       300
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       300
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       320
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       320
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       320
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       320
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       340
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       340
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       340
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       340
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       360
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       360
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       360
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       360
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       380
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       380
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       380
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       380
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       400
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       400
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       400
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       400
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       420
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       420
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       420
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       420
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       440
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       440
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       440
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       440
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       460
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       460
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       460
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       460
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       480
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       480
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       480
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       480
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       500
+(PID.TID 0000.0001) - WARNING -   diag.#   201 : icefrntW (#   1 ) in outp.Stream: icefrntW
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       500
+(PID.TID 0000.0001) - WARNING -   diag.#   202 : icefrntT (#   1 ) in outp.Stream: icefrntT
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       500
+(PID.TID 0000.0001) - WARNING -   diag.#   203 : icefrntS (#   1 ) in outp.Stream: icefrntS
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
+(PID.TID 0000.0001) - WARNING - from DIAGNOSTICS_OUT at iter=       500
+(PID.TID 0000.0001) - WARNING -   diag.#   204 : icefrntR (#   1 ) in outp.Stream: icefrntR
+(PID.TID 0000.0001) - WARNING -   has not been filled (ndiag=  0 )
+(PID.TID 0000.0001) WARNING DIAGNOSTICS_OUT  => write ZEROS instead
