@@ -1,6 +1,0 @@
-# ==========================================
-# | Parameters for STEEP_ICECAVITY package |
-# ==========================================
- &STIC_PARM01
- STICdepthFile = 'icetopo.exp1',
- &
