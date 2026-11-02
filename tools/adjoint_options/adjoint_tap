@@ -1,8 +1,0 @@
-#!/bin/bash
-#
-#
-
-#  This file contains settings for TAPENADE
-
-DEFINES="$DEFINES -DDEFAULT_R8"
-
