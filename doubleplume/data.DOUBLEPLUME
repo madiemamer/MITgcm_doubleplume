@@ -1,0 +1,103 @@
+# ====================================================================
+# data.DOUBLEPLUME  (pkg/doubleplume)
+# Groups must appear in this order. DOUBLEPLUME_PHYS is optional;
+# every entry has a default equal to the value shown (the values of
+# model/const.py, model/gas.py and params.py of the Python model).
+# ====================================================================
+ &DOUBLEPLUME_PARM01
+# plume mask: 1 ice only, 2 sheet, 3 half-cone, 4 sheet+cone,
+# 5 detaching cone; the sign gives the ice-front orientation
+ plumeMaskFile = 'plumeMask.bin',
+# subglacial discharge velocity [m/s] and radius [m]; with no
+# runoff files the plume is driven by the bubbles alone (DP_mb0)
+ runoffVelfile = ' ',
+ runoffRadfile = ' ',
+# background (non-plume) melt, DOUBLEPLUME_MELTRATE
+ iceTemp       = 0.,
+ c_i           = 2009.,
+ backgroundVel = 0.001,
+ usePlumeDiagnostics = .TRUE.,
+ &
+ &DOUBLEPLUME_PARM02
+ ICEFRONTlatentHeat      = 334.0E3,
+ ICEFRONTHeatCapacity_Cp = 2000.0,
+ applyIcefrontTendT      = .TRUE.,
+ applyIcefrontTendS      = .TRUE.,
+ &
+# (with ALLOW_PTRACERS a DOUBLEPLUME_PARM03 group goes here:
+#  ptracerMaskFile, useInputPtracers)
+ &DOUBLEPLUME_PHYS
+# --- model/const.py -------------------------------------------------
+ DP_g        = 9.81,
+ DP_Patm     = 101325.,
+ DP_T0       = 273.15,
+ DP_cp       = 4000.,
+ DP_cpgFrac  = 0.53,
+ DP_Li       = 334000.,
+ DP_lam1     = -5.73E-2,
+ DP_lam2     = 0.08,
+ DP_lam3     = -7.61E-4,
+ DP_Ru       = 8.314472,
+ DP_Mgas     = 0.0319988,
+ DP_PcrGas   = 5042825.270,
+ DP_TcrGas   = 154.58,
+ DP_omegaGas = 0.0216,
+ DP_dhSol    = 428733.,
+# --- model/gas.py (bubble diameter in mm) ---------------------------
+ DP_de0      = 10.0,
+ DP_Kgas     = 1.0,
+ DP_lambdaR  = 0.80,
+ DP_fdis     = 0.001,
+# --- params.py ------------------------------------------------------
+ DP_rhoR     = 1031.,
+ DP_C0       = 0.005,
+ DP_S0       = 0.,
+# source radius when runoffRad = 0 [m]
+ DP_R        = 0.05,
+# bubble mass flux at the source [kg/s]
+ DP_mb0      = 0.002,
+ DP_u0       = 0.11,
+ DP_Cd       = 0.001,
+ DP_gammaT   = 2.20E-2,
+ DP_gammaS   = 6.2E-4,
+ DP_alpha1   = 0.055,
+ DP_alpha2   = 0.110,
+ DP_alpha3   = 0.110,
+ DP_lambdaS  = 1.10,
+ DP_epsilon  = 0.0175,
+ DP_c1       = 0.,
+ DP_c2       = 1.,
+ DP_gammaI   = 1.10,
+ DP_gammaO   = 1.10,
+ DP_kappaPeel= 2.,
+ DP_fe       = 0.1,
+ DP_fp       = 0.95,
+ DP_nwidths  = 1,
+# --- values hard-coded in doublePlume.py ----------------------------
+ DP_FrOuter  = 0.1,
+ DP_FrWuest  = 0.3,
+ DP_uStall   = 1.E-3,
+ DP_JoMin    = 5.E-4,
+ DP_maxIter  = 10,
+ DP_convTol  = 0.01,
+# --- numerics ---------------------------------------------------------
+# fine plume grid [m]; DP_maxFine in DOUBLEPLUME.h must be at least
+# (grounding-line depth)/DP_dz + 1
+ DP_dz        = 0.1,
+ DP_rtolInner = 1.E-8,
+ DP_atolInner = 1.E-10,
+ DP_hmaxInner = 0.1,
+ DP_rtolOuter = 1.E-6,
+ DP_atolOuter = 1.E-9,
+ DP_hmaxOuter = 0.1,
+# ambient dissolved gas [kg/m^3]; > 0 fixes the slip velocity [m/s]
+ DP_Ca        = 0.,
+ DP_usConst   = 0.,
+ DP_surfTol   = 0.,
+ DP_bottomTol = 1.,
+ DP_peelTol   = 0.01,
+ DP_fStall    = 0.1,
+# addMass spin-up ramp [s] (30 days) and plume update interval [steps]
+ DP_rampTime  = 2592000.,
+ DP_nUpdate   = 1,
+ &
